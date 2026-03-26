@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laning - The Ultimate Mel Compendium</title>
+  <meta name="description" content="Master Mel's laning phase with wave management, early trades, Level 2 setups, and optimal warding positions.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- LANGUAGE MODAL -->
+<div id="lang-overlay">
+  <div class="lang-modal">
+    <div class="lang-eyebrow">evandabank Presents</div>
+    <h2>Select Your Language</h2>
+    <p>Choose your preferred language to view the guide.</p>
+    <div class="lang-grid">
+      <button class="lang-btn sel" data-lang="en" onclick="selLang(this)"><span class="flag">🇺🇸</span>English</button>
+      <button class="lang-btn" data-lang="es" onclick="selLang(this)"><span class="flag">🇪🇸</span>Español</button>
+      <button class="lang-btn" data-lang="fr" onclick="selLang(this)"><span class="flag">🇫🇷</span>Français</button>
+      <button class="lang-btn" data-lang="de" onclick="selLang(this)"><span class="flag">🇩🇪</span>Deutsch</button>
+      <button class="lang-btn" data-lang="pt" onclick="selLang(this)"><span class="flag">🇧🇷</span>Brasileiro</button>
+      <button class="lang-btn" data-lang="it" onclick="selLang(this)"><span class="flag">🇮🇹</span>Italiano</button>
+      <button class="lang-btn" data-lang="ro" onclick="selLang(this)"><span class="flag">🇷🇴</span>Română</button>
+      <button class="lang-btn" data-lang="tr" onclick="selLang(this)"><span class="flag">🇹🇷</span>Türkçe</button>
+      <button class="lang-btn" data-lang="pl" onclick="selLang(this)"><span class="flag">🇵🇱</span>Polski</button>
+      <button class="lang-btn" data-lang="ru" onclick="selLang(this)"><span class="flag">🇷🇺</span>Русский</button>
+      <button class="lang-btn" data-lang="ko" onclick="selLang(this)"><span class="flag">🇰🇷</span>한국어</button>
+      <button class="lang-btn" data-lang="ja" onclick="selLang(this)"><span class="flag">🇯🇵</span>日本語</button>
+    </div>
+    <button class="lang-confirm" onclick="confirmLang()">Continue to Guide →</button>
+  </div>
+</div>
+
+<!-- TOP NAV -->
+<header class="topnav-header" id="topnav">
+  <!-- Brand bar -->
+  <div class="topnav-brand-bar">
+    <div class="topnav-brand-left">
+      <div>
+        <div class="topnav-brand-eyebrow">Ultimate Compendium</div>
+        <div class="topnav-brand-title">The Ultimate Mel Compendium</div>
+      </div>
+      <div class="topnav-divider"></div>
+      <div class="topnav-author">by <strong>evandabank</strong></div>
+    </div>
+    <div class="topnav-brand-right">
+      <button class="lang-switch-btn" onclick="openLang()">🌐 <span id="lang-label">English</span></button>
+    </div>
+  </div>
+
+  <!-- Nav links -->
+  <nav class="topnav-nav">
+    <a href="index.html" class="nav-item">Intro / Home</a>
+    <a href="abilities.html" class="nav-item">Abilities</a>
+    <a href="laning.html" class="nav-item">Laning / Early Game</a>
+    <a href="pregame.html" class="nav-item">Pregame</a>
+    <a href="midgame.html" class="nav-item">Mid Game</a>
+    <a href="lategame.html" class="nav-item">Late Game</a>
+    <a href="matchups.html" class="nav-item">Matchups</a>
+  </nav>
+</header>
+
+<div class="layout">
+  <main class="main">
+
+    <div class="page active" id="page-laning">
+      <div class="page-hero">
+        <div class="hero-eyebrow">Laning &amp; Early Game</div>
+        <h2>Laning &amp; Early Game</h2>
+        <p class="hero-desc">Wave management fundamentals, early trade patterns, Level 2 setups, and warding positions to control vision.</p>
+      </div>
+      <div class="page-subnav">
+        <div class="subnav-item active" onclick="subnavScroll(this,'laning-sec')">Early Game</div>
+        <div class="subnav-item" onclick="subnavScroll(this,'warding-sec')">Warding</div>
+      </div>
+      <div class="page-body">
+
+        <div id="laning-sec" style="margin-bottom:36px;scroll-margin-top:130px">
+          <div class="section-head"><h3>Early Game</h3><div class="section-rule"></div></div>
+          <div class="section-sub">Laning fundamentals and wave management</div>
+          <div class="g2">
+            <div class="card">
+              <div class="card-title">Wave Management</div>
+              <ul class="tip-list">
+                <li><span class="tip-num">Slow</span><span>Slow push into a crash before major objectives (Drake, Herald, Baron)</span></li>
+                <li><span class="tip-num">Freeze</span><span>Freeze near your tower when ahead — deny XP and gold from enemy</span></li>
+                <li><span class="tip-num">Fast</span><span>Fast push and roam after winning a decisive trade</span></li>
+                <li><span class="tip-num">Q Zone</span><span>Use Q to deny enemies from walking into a wave reset</span></li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-title">Early Trade Pattern</div>
+              <ul class="tip-list">
+                <li><span class="tip-num">Lvl 2</span><span>Prioritize hitting Level 2 fast — W+E at Level 2 is a very strong trade</span></li>
+                <li><span class="tip-num">Poke</span><span>Abuse short W poke trades — extended fights only favor you with 3 stacks</span></li>
+                <li><span class="tip-num">Patience</span><span>Don't trade when the wave is crashing into your tower — bad position</span></li>
+                <li><span class="tip-num">Setup</span><span>Set up Triple Brittle whenever Q comes off cooldown</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="g3">
+            <div class="card">
+              <div class="card-title">Summoner Spells</div>
+              <p>Always take <strong>TP</strong>. Second summoner: <strong>Ignite</strong>, <strong>Exhaust</strong>, or <strong>Flash</strong>. Ignite + TP is back — great against heavy healers like Darius, Olaf, and Vladimir.</p>
+            </div>
+            <div class="card">
+              <div class="card-title">Pre-Level 6 Gameplan</div>
+              <p>Poke down with <strong>Q → W → E</strong> until they're low enough for the Triple Brittle. Confirm <em>no dashes remain</em> before committing E or they will dodge and out-trade you.</p>
+            </div>
+            <div class="card">
+              <div class="card-title">Passive Usage</div>
+              <p>Use your passive as bait to trade. Mastering the reflect timing is your most impactful mechanical skill. Bait big spells, reflect, then follow up with your combo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="warding-sec" style="scroll-margin-top:130px">
+          <div class="section-head"><h3>Warding</h3><div class="section-rule"></div></div>
+          <div class="section-sub">Vision control as mid lane</div>
+          <div class="ward-card">
+            <div class="ward-badge">River Bush</div>
+            <div class="ward-title">Top River Bush (Dragon Side)</div>
+            <p>Ward the top side river bush at 1:30 before the wave hits. This covers the standard level 2 invade path and gives you early warning on jungle position to plan your level 2 trade.</p>
+          </div>
+          <div class="ward-card">
+            <div class="ward-badge">Pixel Bush</div>
+            <div class="ward-title">Pixel Bush (Both Sides)</div>
+            <p>Pixel bushes on both sides of mid river give you full vision of enemy jungle pathing. Drop these when you have priority. Critical for tracking invades and roam timing.</p>
+          </div>
+          <div class="ward-card">
+            <div class="ward-badge">Enemy Jungle</div>
+            <div class="ward-title">Enemy Blue/Red Side Jungle Entrance</div>
+            <p>When your team has mid priority and you're shoving the wave, deep ward into the enemy jungle entrance to track camps and predict ganks before they arrive at mid.</p>
+          </div>
+          <div class="ward-card">
+            <div class="ward-badge">Dragon / Baron</div>
+            <div class="ward-title">Objective Vision Control</div>
+            <p>At 4:30 start building vision toward Dragon. Ward the dragon pit entrance and the connecting bushes. Having vision here 30 seconds before objective spawn gives your team full control of the fight setup.</p>
+          </div>
+          <div class="info-box">
+            <strong>Sweeping:</strong> Always sweep the mid river and lane bushes before extended trades or all-ins. A hidden enemy ward tips off your opponent and lets them dodge your combo setup.
+          </div>
+        </div>
+      </div>
+    </div>
+
+          <div class="card">
+            <div class="card-title">Wave Management</div>
+            <p>Learn how to control minion waves to create favorable trading opportunities and pressure your lane opponent.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-head"><h3>Warding</h3><div class="section-rule"></div></div>
+          <div class="section-sub">Vision control positions</div>
+
+          <div class="ward-card">
+            <div class="ward-title">River Ward Spots</div>
+            <p>Key warding positions to control vision and prevent ganks.</p>
+            <div class="ward-badge">HIGH PRIORITY</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--navy); color: rgba(255,255,255,0.6); padding: 24px 48px; text-align: center; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <p>The Ultimate Mel Compendium by evandabank • © 2026</p>
+      <p style="margin-top: 8px; font-size: 0.75rem;">Built with ❤️ for the League of Legends community</p>
+    </div>
+  </footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

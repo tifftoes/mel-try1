@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregame - The Ultimate Mel Compendium</title>
+  <meta name="description" content="Complete Mel pregame setup including summoner spells, rune pages, item builds, and upgrade priorities.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- LANGUAGE MODAL -->
+<div id="lang-overlay">
+  <div class="lang-modal">
+    <div class="lang-eyebrow">evandabank Presents</div>
+    <h2>Select Your Language</h2>
+    <p>Choose your preferred language to view the guide.</p>
+    <div class="lang-grid">
+      <button class="lang-btn sel" data-lang="en" onclick="selLang(this)"><span class="flag">🇺🇸</span>English</button>
+      <button class="lang-btn" data-lang="es" onclick="selLang(this)"><span class="flag">🇪🇸</span>Español</button>
+      <button class="lang-btn" data-lang="fr" onclick="selLang(this)"><span class="flag">🇫🇷</span>Français</button>
+      <button class="lang-btn" data-lang="de" onclick="selLang(this)"><span class="flag">🇩🇪</span>Deutsch</button>
+      <button class="lang-btn" data-lang="pt" onclick="selLang(this)"><span class="flag">🇧🇷</span>Brasileiro</button>
+      <button class="lang-btn" data-lang="it" onclick="selLang(this)"><span class="flag">🇮🇹</span>Italiano</button>
+      <button class="lang-btn" data-lang="ro" onclick="selLang(this)"><span class="flag">🇷🇴</span>Română</button>
+      <button class="lang-btn" data-lang="tr" onclick="selLang(this)"><span class="flag">🇹🇷</span>Türkçe</button>
+      <button class="lang-btn" data-lang="pl" onclick="selLang(this)"><span class="flag">🇵🇱</span>Polski</button>
+      <button class="lang-btn" data-lang="ru" onclick="selLang(this)"><span class="flag">🇷🇺</span>Русский</button>
+      <button class="lang-btn" data-lang="ko" onclick="selLang(this)"><span class="flag">🇰🇷</span>한국어</button>
+      <button class="lang-btn" data-lang="ja" onclick="selLang(this)"><span class="flag">🇯🇵</span>日本語</button>
+    </div>
+    <button class="lang-confirm" onclick="confirmLang()">Continue to Guide →</button>
+  </div>
+</div>
+
+<!-- TOP NAV -->
+<header class="topnav-header" id="topnav">
+  <!-- Brand bar -->
+  <div class="topnav-brand-bar">
+    <div class="topnav-brand-left">
+      <div>
+        <div class="topnav-brand-eyebrow">Ultimate Compendium</div>
+        <div class="topnav-brand-title">The Ultimate Mel Compendium</div>
+      </div>
+      <div class="topnav-divider"></div>
+      <div class="topnav-author">by <strong>evandabank</strong></div>
+    </div>
+    <div class="topnav-brand-right">
+      <button class="lang-switch-btn" onclick="openLang()">🌐 <span id="lang-label">English</span></button>
+    </div>
+  </div>
+
+  <!-- Nav links -->
+  <nav class="topnav-nav">
+    <a href="index.html" class="nav-item">Intro / Home</a>
+    <a href="abilities.html" class="nav-item">Abilities</a>
+    <a href="laning.html" class="nav-item">Laning / Early Game</a>
+    <a href="pregame.html" class="nav-item">Pregame</a>
+    <a href="midgame.html" class="nav-item">Mid Game</a>
+    <a href="lategame.html" class="nav-item">Late Game</a>
+    <a href="matchups.html" class="nav-item">Matchups</a>
+  </nav>
+</header>
+
+<div class="layout">
+  <main class="main">
+
+    <div class="page active" id="page-pregame">
+      <div class="page-hero">
+        <div class="hero-eyebrow">Pregame Setup</div>
+        <h2>Pregame</h2>
+        <p class="hero-desc">Everything you choose before the game starts — summoner spells, rune pages, and item build paths.</p>
+      </div>
+      <div class="page-subnav">
+        <div class="subnav-item active" onclick="subnavScroll(this,'summoners-sec')">Summoner Spells</div>
+        <div class="subnav-item" onclick="subnavScroll(this,'runes-sec')">Runes</div>
+        <div class="subnav-item" onclick="subnavScroll(this,'items-sec')">Items</div>
+      </div>
+      <div class="page-body">
+
+        <div id="summoners-sec" style="margin-bottom:36px;scroll-margin-top:130px">
+          <div class="section-head"><h3>Summoner Spells</h3><div class="section-rule"></div></div>
+          <div class="section-sub">The only recommended combination for Mel</div>
+          <div class="g2" style="margin-bottom:16px">
+            <div class="card" style="border-top:3px solid var(--brand)">
+              <div class="card-title">🔵 Flash — Must Use Every Game</div>
+              <p style="font-size:.92rem;line-height:1.7">Flash is the best summoner spell in the game, hands down. Especially on mages — which have intentionally low mobility — it's essential to have an escape option. <strong>This is a MUST USE in every single game. No exceptions.</strong></p>
+            </div>
+            <div class="card" style="border-top:3px solid var(--brand)">
+              <div class="card-title">🟣 Teleport — Only Recommended Second Spell</div>
+              <p style="font-size:.92rem;line-height:1.7">TP is the only second summoner evandabank recommends on Mel. Almost all midlaners run it, and crucially, <strong>you are not in range to use Ignite for the majority of fights</strong> — Mel plays from too far away for short-range summoners to be reliable.</p>
+            </div>
+          </div>
+          <div class="info-box-amber">⚠️ Do not take Ignite — Mel plays from too far away to reliably use it in most fights. Flash + TP is the standard in every game without exception.</div>
+        </div>
+
+        <div id="runes-sec" style="margin-bottom:36px;scroll-margin-top:130px">
+          <div class="section-head"><h3>Runes</h3><div class="section-rule"></div></div>
+          <div class="section-sub">Standard rune page — Arcane Comet every game</div>
+          <div class="g2" style="margin-bottom:16px">
+            <div class="rune-block">
+              <div class="rune-block-title">Primary Path — Sorcery</div>
+              <p style="font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:8px">Keystone</p>
+              <div class="rune-row"><span class="rune-pill primary">Arcane Comet</span></div>
+              <p style="font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin:12px 0 8px">Secondaries</p>
+              <div class="rune-row">
+                <span class="rune-pill primary">Manaflow Band</span>
+                <span class="rune-pill primary">Transcendence</span>
+                <span class="rune-pill primary">Scorch</span>
+              </div>
+              <div class="info-box" style="margin-top:12px;font-size:.85rem">Scorch alternative: take <strong>Gathering Storm</strong> in ~5% of games when the enemy is too passive/tanky to kill (e.g. Garen, Nasus). Default to Scorch in all other games.</div>
+            </div>
+            <div class="rune-block">
+              <div class="rune-block-title">Secondary Path — Precision</div>
+              <div class="rune-row" style="margin-bottom:12px">
+                <span class="rune-pill primary">Presence of Mind</span>
+                <span class="rune-pill primary">Legend: Haste</span>
+              </div>
+              <p style="font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:8px">Stat Shards</p>
+              <div class="rune-row">
+                <span class="rune-pill primary">AP</span>
+                <span class="rune-pill primary">AP</span>
+                <span class="rune-pill primary">Health Scaling</span>
+              </div>
+              <div class="info-box" style="margin-top:12px;font-size:.85rem">Shard swaps: replace Health Scaling with <strong>Tenacity</strong> vs heavy CC, or swap one AP shard for <strong>Attack Speed</strong> if preferred.</div>
+            </div>
+          </div>
+          <div class="g2">
+            <div class="card">
+              <div class="card-title">Why Arcane Comet?</div>
+              <p style="font-size:.9rem;line-height:1.7">Mel's long range makes it nearly guaranteed that Q will proc Comet and Scorch on every trade — providing roughly 50 bonus damage early. This heavily outshines First Strike and Summon Aery. Comet is the only keystone Mel should ever run.</p>
+            </div>
+            <div class="card">
+              <div class="card-title">Why Scorch?</div>
+              <p style="font-size:.9rem;line-height:1.7">Scorch can feel like a second Keystone in lane — 20 damage every 10 seconds is enormous early on. Hold an ability to proc it on cooldown. By your first reset, Scorch may have already dealt 200+ damage. It provides nothing late game, but the early lane dominance it enables is unmatched.</p>
+            </div>
+            <div class="card">
+              <div class="card-title">Why Presence of Mind?</div>
+              <p style="font-size:.9rem;line-height:1.7">Mel is one of the most mana-hungry mages — Radiant Volley costs 110 mana at max rank. Presence of Mind gives back mana on procs and restores 15% max mana on takedowns. Not the strongest secondary rune, but it enables extra casts in the early game that other options can't match.</p>
+            </div>
+            <div class="card">
+              <div class="card-title">Why Legend: Haste?</div>
+              <p style="font-size:.9rem;line-height:1.7">Running a burn build (Blackfire Torch + Liandry's) means having abilities off cooldown to stack burns is critical. 15 ability haste from Legend: Haste is a genuine game-changer. Current mage items make it almost impossible to reach meaningful haste without this rune.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="items-sec" style="scroll-margin-top:130px">
+          <div class="section-head"><h3>Items</h3><div class="section-rule"></div></div>
+          <div class="section-sub">Build path and situational picks</div>
+          <div class="tab-bar">
+            <button class="tab-btn active" onclick="switchTab(this,'t-start')">Starting Items</button>
+            <button class="tab-btn" onclick="switchTab(this,'t-boots')">Boots</button>
+            <button class="tab-btn" onclick="switchTab(this,'t-core')">Core Build</button>
+            <button class="tab-btn" onclick="switchTab(this,'t-situational')">Situational</button>
+          </div>
+
+          <div id="t-start" class="tab-pane active">
+            <div class="g3">
+              <div class="item-card" style="border-top:3px solid var(--brand)">
+                <div class="item-icon">💍</div>
+                <div class="name">Doran's Ring</div>
+                <div class="note">Every game, no exceptions. Mel cannot make good use of other starting items.</div>
+              </div>
+              <div class="item-card">
+                <div class="item-icon">🧪</div>
+                <div class="name">2× Health Potions</div>
+                <div class="note">Start your first potion at ~180–200 damage taken. Upgrade to Refillable on first or second reset.</div>
+              </div>
+              <div class="item-card">
+                <div class="item-icon">👁️</div>
+                <div class="name">Warding Totem</div>
+                <div class="note">Must purchase on every champion. Swap to Farsight Alteration in the late game.</div>
+              </div>
+            </div>
+            <div class="info-box" style="margin-top:4px"><strong>First reset priority:</strong> Spend ALL your gold — do not leave base with 300g unspent. Build toward Lost Chapter first (it builds into all mage starting items and gives mana on level-up). Only buy generic boots before completing your first full item.</div>
+          </div>
+
+          <div id="t-boots" class="tab-pane">
+            <div class="g2">
+              <div class="item-card" style="border-top:3px solid var(--brand)">
+                <div class="item-icon">👟</div>
+                <div class="name">Sorcerer's Shoes</div>
+                <div class="note">Default boots in all cases. Best upgrade of all shoe types — always build these if you win Feats of Strength.</div>
+              </div>
+              <div class="item-card" style="border-top:3px solid var(--navy)">
+                <div class="item-icon">👟</div>
+                <div class="name">Ionian Boots of Lucidity</div>
+                <div class="note">Run instead of Sorcerer's Shoes only when the enemy has 2–3 champions with significant magic resist built. Swiftness boots are never worth it — Mel doesn't need gap-closing movespeed.</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="t-core" class="tab-pane">
+            <p style="font-size:.92rem;color:var(--text-muted);margin-bottom:18px">This is a <strong>burn build</strong>. The goal is to apply persistent damage through Blackfire Torch and Liandry's procs, stacking burns every time abilities come off cooldown.</p>
+            <div class="g4">
+              <div class="item-card" style="border-top:3px solid var(--brand)">
+                <div class="item-icon">🔥</div>
+                <div class="name">Blackfire Torch</div>
+                <div class="note">Best first item. Burning effect on every ability landed. Provides the mana needed to sustain expensive spells early.</div>
+              </div>
+              <div class="item-card" style="border-top:3px solid var(--brand)">
+                <div class="item-icon">🌋</div>
+                <div class="name">Liandry's Torment</div>
+                <div class="note">Second item. Burn does more damage than Blackfire, but gives HP instead of mana — building it first causes OOM issues.</div>
+              </div>
+              <div class="item-card" style="border-top:3px solid var(--navy)">
+                <div class="item-icon">🎩</div>
+                <div class="name">Rabadon's Deathcap</div>
+                <div class="note">Third or fourth item. Multiplies total AP by 30% — massive power spike for poke and sustained burn damage.</div>
+              </div>
+              <div class="item-card">
+                <div class="item-icon">🕳️</div>
+                <div class="name">Void Staff</div>
+                <div class="note">Build when 2–3 enemies have significant magic resist. Mathematically gold-efficient at ~120 MR on the enemy.</div>
+              </div>
+              <div class="item-card">
+                <div class="item-icon">⌛</div>
+                <div class="name">Zhonya's Hourglass</div>
+                <div class="note">Third or fourth vs burst/engage comps, AD assassins (Zed, Talon), or Malphite. Stasis is the best active in the game.</div>
+              </div>
+              <div class="item-card">
+                <div class="item-icon">🔮</div>
+                <div class="name">Banshee's Veil</div>
+                <div class="note">Fourth or fifth. Underrated. Best against heavy magic damage or champions that can't poke the spellshield off (e.g. Annie).</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="t-situational" class="tab-pane">
+            <div class="g2">
+              <div class="card">
+                <div class="card-title">Bloodletter's Curse</div>
+                <p style="font-size:.9rem;line-height:1.65">Extremely underrated. Two Mel ability casts can apply full stacks — a near-instant 30% magic shred. If you have 3 AP champions on your team, this becomes a must-buy third item. <strong>Only one champion per team should build it.</strong></p>
+              </div>
+              <div class="card">
+                <div class="card-title">Crypt Bloom</div>
+                <p style="font-size:.9rem;line-height:1.65">Very situational — hard to tell when you're getting real value. Not much different from Void Staff; both are anti-MR items. Build whichever is stronger in the current meta, or just default to Void Staff (simpler).</p>
+              </div>
+              <div class="card">
+                <div class="card-title">Cosmic Drive</div>
+                <p style="font-size:.9rem;line-height:1.65">Gives movespeed on ability hits — a unique stat that requires skill to use properly. evandabank personally does not build this and recommends most players avoid it unless they're confident in kiting with the speed bonus.</p>
+              </div>
+              <div class="card">
+                <div class="card-title">Null-Magic Mantle (Early)</div>
+                <p style="font-size:.9rem;line-height:1.65">Buy this on your first reset in lanes where magic burst is a death threat — Annie, LeBlanc, Sylas. Upgrade into Verdant Barrier / Banshee's later. Never buy Mercury Treads — they are a bait on mages.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+          <div class="g2">
+            <div class="item-card">
+              <div class="item-icon">💨</div>
+              <div class="name">Flash</div>
+              <div class="note">Essential mobility</div>
+            </div>
+            <div class="item-card">
+              <div class="item-icon">💥</div>
+              <div class="name">Ignite</div>
+              <div class="note">Burst damage</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:36px">
+          <div class="section-head"><h3>Runes</h3><div class="section-rule"></div></div>
+          <div class="section-sub">Primary and secondary rune selections</div>
+
+          <div class="rune-block">
+            <div class="rune-block-title">Primary: Domination</div>
+            <div class="rune-row">
+              <span class="rune-pill primary">Electrocute</span>
+              <span class="rune-pill">Cheap Shot</span>
+              <span class="rune-pill">Eyeball Collection</span>
+              <span class="rune-pill">Relentless Hunter</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-head"><h3>Items</h3><div class="section-rule"></div></div>
+          <div class="section-sub">Core build and itemization</div>
+
+          <div class="g4">
+            <div class="item-card">
+              <div class="item-icon">🗡️</div>
+              <div class="name">Doran's Blade</div>
+              <div class="note">Starting item</div>
+            </div>
+            <div class="item-card">
+              <div class="item-icon">👢</div>
+              <div class="name">Boots</div>
+              <div class="note">Early game</div>
+            </div>
+            <div class="item-card">
+              <div class="item-icon">⚔️</div>
+              <div class="item-card">BF Sword</div>
+              <div class="note">Core component</div>
+            </div>
+            <div class="item-card">
+              <div class="item-icon">🔥</div>
+              <div class="name">Infinity Edge</div>
+              <div class="note">AD carry</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--navy); color: rgba(255,255,255,0.6); padding: 24px 48px; text-align: center; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <p>The Ultimate Mel Compendium by evandabank • © 2026</p>
+      <p style="margin-top: 8px; font-size: 0.75rem;">Built with ❤️ for the League of Legends community</p>
+    </div>
+  </footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

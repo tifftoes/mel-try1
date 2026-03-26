@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Late Game - The Ultimate Mel Compendium</title>
+  <meta name="description" content="Mel late game strategy including win conditions, Baron/Elder setups, and closing out games.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- LANGUAGE MODAL -->
+<div id="lang-overlay">
+  <div class="lang-modal">
+    <div class="lang-eyebrow">evandabank Presents</div>
+    <h2>Select Your Language</h2>
+    <p>Choose your preferred language to view the guide.</p>
+    <div class="lang-grid">
+      <button class="lang-btn sel" data-lang="en" onclick="selLang(this)"><span class="flag">🇺🇸</span>English</button>
+      <button class="lang-btn" data-lang="es" onclick="selLang(this)"><span class="flag">🇪🇸</span>Español</button>
+      <button class="lang-btn" data-lang="fr" onclick="selLang(this)"><span class="flag">🇫🇷</span>Français</button>
+      <button class="lang-btn" data-lang="de" onclick="selLang(this)"><span class="flag">🇩🇪</span>Deutsch</button>
+      <button class="lang-btn" data-lang="pt" onclick="selLang(this)"><span class="flag">🇧🇷</span>Brasileiro</button>
+      <button class="lang-btn" data-lang="it" onclick="selLang(this)"><span class="flag">🇮🇹</span>Italiano</button>
+      <button class="lang-btn" data-lang="ro" onclick="selLang(this)"><span class="flag">🇷🇴</span>Română</button>
+      <button class="lang-btn" data-lang="tr" onclick="selLang(this)"><span class="flag">🇹🇷</span>Türkçe</button>
+      <button class="lang-btn" data-lang="pl" onclick="selLang(this)"><span class="flag">🇵🇱</span>Polski</button>
+      <button class="lang-btn" data-lang="ru" onclick="selLang(this)"><span class="flag">🇷🇺</span>Русский</button>
+      <button class="lang-btn" data-lang="ko" onclick="selLang(this)"><span class="flag">🇰🇷</span>한국어</button>
+      <button class="lang-btn" data-lang="ja" onclick="selLang(this)"><span class="flag">🇯🇵</span>日本語</button>
+    </div>
+    <button class="lang-confirm" onclick="confirmLang()">Continue to Guide →</button>
+  </div>
+</div>
+
+<!-- TOP NAV -->
+<header class="topnav-header" id="topnav">
+  <!-- Brand bar -->
+  <div class="topnav-brand-bar">
+    <div class="topnav-brand-left">
+      <div>
+        <div class="topnav-brand-eyebrow">Ultimate Compendium</div>
+        <div class="topnav-brand-title">The Ultimate Mel Compendium</div>
+      </div>
+      <div class="topnav-divider"></div>
+      <div class="topnav-author">by <strong>evandabank</strong></div>
+    </div>
+    <div class="topnav-brand-right">
+      <button class="lang-switch-btn" onclick="openLang()">🌐 <span id="lang-label">English</span></button>
+    </div>
+  </div>
+
+  <!-- Nav links -->
+  <nav class="topnav-nav">
+    <a href="index.html" class="nav-item">Intro / Home</a>
+    <a href="abilities.html" class="nav-item">Abilities</a>
+    <a href="laning.html" class="nav-item">Laning / Early Game</a>
+    <a href="pregame.html" class="nav-item">Pregame</a>
+    <a href="midgame.html" class="nav-item">Mid Game</a>
+    <a href="lategame.html" class="nav-item">Late Game</a>
+    <a href="matchups.html" class="nav-item">Matchups</a>
+  </nav>
+</header>
+
+<div class="layout">
+  <main class="main">
+
+    <div class="page active" id="page-lategame">
+      <div class="page-hero">
+        <div class="hero-eyebrow">Late Game</div>
+        <h2>Late Game</h2>
+        <p class="hero-desc">Win conditions, Baron/Elder setups, and closing out games with Mel's scaling potential.</p>
+      </div>
+      <div class="page-body">
+
+        <div id="baron-elder-sec" style="margin-bottom:36px;scroll-margin-top:130px">
+          <div class="section-head"><h3>Baron &amp; Elder</h3><div class="section-rule"></div></div>
+          <div class="section-sub">Objective execution and setups</div>
+
+          <div class="card">
+            <div class="card-title">Baron Strategy</div>
+            <p>Baron is the primary objective in late game. Use your poke to control vision and stack.</p>
+            <ul class="tip-list">
+              <li><span class="tip-num">1</span><span>Control vision around Baron with wards</span></li>
+              <li><span class="tip-num">2</span><span>Use Q to poke and stack from range</span></li>
+              <li><span class="tip-num">3</span><span>Coordinate with team for dives if needed</span></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Elder Dragon</div>
+            <p>Elder provides massive buffs. Prioritize taking it when available.</p>
+            <p>Elder is a game-changer. Use your ultimate to secure kills during Elder fights.</p>
+          </div>
+        </div>
+
+        <div id="endgame-sec" style="margin-bottom:36px;scroll-margin-top:130px">
+          <div class="section-head"><h3>End Game</h3><div class="section-rule"></div></div>
+          <div class="section-sub">Closing out victories</div>
+
+          <div class="card">
+            <div class="card-title">Win Conditions</div>
+            <p>Focus on teamfights and inhibitor pressure. Your scaling makes you dominant in prolonged fights.</p>
+            <p>Look for engages where you can use W to reflect and R to execute.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Base Racing</div>
+            <p>If ahead, push inhibitors. If behind, defend and look for picks.</p>
+            <p>Use your mobility and poke to control the pace.</p>
+          </div>
+        </div>
+
+        <div id="scaling-sec" style="scroll-margin-top:130px">
+          <div class="section-head"><h3>Late Game Scaling</h3><div class="section-rule"></div></div>
+          <div class="section-sub">Maximizing Mel's potential</div>
+
+          <div class="card">
+            <div class="card-title">Item Completion</div>
+            <p>Finish your build with AP items and survivability.</p>
+            <ul class="tip-list">
+              <li><span class="tip-num">1</span><span>Rabadon's Deathcap for damage</span></li>
+              <li><span class="tip-num">2</span><span>Zhonya's Hourglass for defense</span></li>
+              <li><span class="tip-num">3</span><span>Mercurial Scimitar vs CC</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--navy); color: rgba(255,255,255,0.6); padding: 24px 48px; text-align: center; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1);">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <p>The Ultimate Mel Compendium by evandabank • © 2026</p>
+      <p style="margin-top: 8px; font-size: 0.75rem;">Built with ❤️ for the League of Legends community</p>
+    </div>
+  </footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

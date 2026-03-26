@@ -1,0 +1,52 @@
+<!-- LANGUAGE MODAL -->
+<div id="lang-overlay">
+  <div class="lang-modal">
+    <div class="lang-eyebrow">evandabank Presents</div>
+    <h2>Select Your Language</h2>
+    <p>Choose your preferred language to view the guide.</p>
+    <div class="lang-grid">
+      <button class="lang-btn sel" data-lang="en" onclick="selLang(this)"><span class="flag">🇺🇸</span>English</button>
+      <button class="lang-btn" data-lang="es" onclick="selLang(this)"><span class="flag">🇪🇸</span>Español</button>
+      <button class="lang-btn" data-lang="fr" onclick="selLang(this)"><span class="flag">🇫🇷</span>Français</button>
+      <button class="lang-btn" data-lang="de" onclick="selLang(this)"><span class="flag">🇩🇪</span>Deutsch</button>
+      <button class="lang-btn" data-lang="pt" onclick="selLang(this)"><span class="flag">🇧🇷</span>Brasileiro</button>
+      <button class="lang-btn" data-lang="it" onclick="selLang(this)"><span class="flag">🇮🇹</span>Italiano</button>
+      <button class="lang-btn" data-lang="ro" onclick="selLang(this)"><span class="flag">🇷🇴</span>Română</button>
+      <button class="lang-btn" data-lang="tr" onclick="selLang(this)"><span class="flag">🇹🇷</span>Türkçe</button>
+      <button class="lang-btn" data-lang="pl" onclick="selLang(this)"><span class="flag">🇵🇱</span>Polski</button>
+      <button class="lang-btn" data-lang="ru" onclick="selLang(this)"><span class="flag">🇷🇺</span>Русский</button>
+      <button class="lang-btn" data-lang="ko" onclick="selLang(this)"><span class="flag">🇰🇷</span>한국어</button>
+      <button class="lang-btn" data-lang="ja" onclick="selLang(this)"><span class="flag">🇯🇵</span>日本語</button>
+    </div>
+    <button class="lang-confirm" onclick="confirmLang()">Continue to Guide →</button>
+  </div>
+</div>
+
+<!-- TOP NAV -->
+<header class="topnav-header" id="topnav">
+  <!-- Brand bar -->
+  <div class="topnav-brand-bar">
+    <div class="topnav-brand-left">
+      <div>
+        <div class="topnav-brand-eyebrow">Ultimate Compendium</div>
+        <div class="topnav-brand-title">The Ultimate Mel Compendium</div>
+      </div>
+      <div class="topnav-divider"></div>
+      <div class="topnav-author">by <strong>evandabank</strong></div>
+    </div>
+    <div class="topnav-brand-right">
+      <button class="lang-switch-btn" onclick="openLang()">🌐 <span id="lang-label">English</span></button>
+    </div>
+  </div>
+
+  <!-- Nav links -->
+  <nav class="topnav-nav">
+    <a href="index.html" class="nav-item">Intro / Home</a>
+    <a href="abilities.html" class="nav-item">Abilities</a>
+    <a href="laning.html" class="nav-item">Laning / Early Game</a>
+    <a href="pregame.html" class="nav-item">Pregame</a>
+    <a href="midgame.html" class="nav-item">Mid Game</a>
+    <a href="lategame.html" class="nav-item">Late Game</a>
+    <a href="matchups.html" class="nav-item">Matchups</a>
+  </nav>
+</header>
