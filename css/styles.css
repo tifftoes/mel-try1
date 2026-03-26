@@ -650,19 +650,33 @@ body {
   text-transform: uppercase;
   color: var(--brand);
 }
- 
-/* ── VIDEO LEFT, TEXT RIGHT LAYOUT ── */
+
+/* ── VIDEO + TEXT LAYOUT ── */
+/* Video stacks full-width on top, text flows below */
 .abl-panel-body {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 28px;
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
- 
+
 .abl-video-wrap {
   width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
 }
- 
+
+/* Applies to both <video> and <iframe> embeds */
+.abl-video,
+iframe.abl-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: none;
+  background: #000;
+}
+
 .abl-video-placeholder {
   width: 100%;
   aspect-ratio: 16/9;
