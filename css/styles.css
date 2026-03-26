@@ -651,12 +651,12 @@ body {
   color: var(--brand);
 }
 
-/* ── VIDEO + TEXT LAYOUT ── */
-/* Video stacks full-width on top, text flows below */
+/* ── VIDEO LEFT, TEXT RIGHT LAYOUT ── */
 .abl-panel-body {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 28px;
+  align-items: flex-start;
 }
 
 .abl-video-wrap {
