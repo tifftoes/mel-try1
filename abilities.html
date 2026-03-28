@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abilities - The Ultimate Mel Compendium</title>
-  <meta name="description" content="Complete Mel abilities breakdown including skill order, power spikes, and all core combat sequences.">
+  <title>Pregame - The Ultimate Mel Compendium</title>
+  <meta name="description" content="Complete Mel pregame setup including summoner spells, rune pages, item builds, and upgrade priorities.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -36,7 +36,6 @@
 
 <!-- TOP NAV -->
 <header class="topnav-header" id="topnav">
-  <!-- Brand bar -->
   <div class="topnav-brand-bar">
     <div class="topnav-brand-left">
       <div>
@@ -47,13 +46,11 @@
       <div class="topnav-author">by <strong>evandabank</strong></div>
     </div>
     <div class="topnav-brand-right">
-      <button class="lang-switch-btn" onclick="openLang()"><span id="lang-label">English</span></button>
+      <button class="lang-switch-btn" onclick="openLang()">🌐 <span id="lang-label">English</span></button>
     </div>
   </div>
-
-  <!-- Nav links -->
   <nav class="topnav-nav">
-    <a href="home.html" class="nav-item">Intro / Home</a>
+    <a href="index.html" class="nav-item">Intro / Home</a>
     <a href="abilities.html" class="nav-item">Abilities</a>
     <a href="laning.html" class="nav-item">Laning / Early Game</a>
     <a href="pregame.html" class="nav-item">Pregame</a>
@@ -66,248 +63,220 @@
 <div class="layout">
   <main class="main">
 
-    <div class="page active" id="page-abilities">
+    <div class="page active" id="page-pregame">
       <div class="page-hero">
-        <div class="hero-eyebrow">Abilities &amp; Combos</div>
-        <h2>Abilities &amp; Combos</h2>
-        <p class="hero-desc">Full kit breakdown, ability leveling order, powerspike timings, and every core combat sequence you need.</p>
+        <div class="hero-eyebrow">Pregame Setup</div>
+        <h2>Pregame</h2>
+        <p class="hero-desc">Everything you choose before the game starts — summoner spells, rune pages, and item build paths.</p>
       </div>
       <div class="page-subnav">
-        <div class="subnav-item active" onclick="subnavScroll(this,'abilities-sec')">Abilities</div>
-        <div class="subnav-item" onclick="subnavScroll(this,'combos-sec')">Combos</div>
+        <div class="subnav-item active" onclick="subnavScroll(this,'summoners-sec')">Summoner Spells</div>
+        <div class="subnav-item" onclick="subnavScroll(this,'runes-sec')">Runes</div>
+        <div class="subnav-item" onclick="subnavScroll(this,'items-sec')">Items</div>
       </div>
       <div class="page-body">
 
-        <div id="abilities-sec" style="margin-bottom:36px;scroll-margin-top:130px">
-          <div class="section-head"><h3>Abilities</h3><div class="section-rule"></div></div>
-          <div class="section-sub">Click any ability to expand details</div>
+        <!-- ── SUMMONER SPELLS ── -->
+        <div id="summoners-sec" style="margin-bottom:36px;scroll-margin-top:130px">
+          <div class="section-head"><h3>Summoner Spells</h3><div class="section-rule"></div></div>
+          <div class="section-sub">The only recommended combination for Mel</div>
 
-          <!-- ABILITY CARD ROW -->
-          <div class="ability-row" id="ability-row">
-            <div class="abl-card" id="abl-passive" onclick="toggleAbility('passive')">
-              <div class="abl-img-wrap"><img class="abl-img" src="images/Passive.png" alt="Passive"></div>
-              <div class="abl-footer">
-                <span class="abl-letter">P</span>
-                <span class="abl-name">Passive</span>
-                <span class="abl-chevron" id="chev-passive">▾</span>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;align-items:stretch">
+            <!-- LEFT: stacked spell cards -->
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div class="card" style="border-top:3px solid var(--brand);margin-bottom:0">
+                <div class="card-title">🔵 Flash — Must Use Every Game</div>
+                <p style="font-size:.92rem;line-height:1.7">Flash is the best summoner spell in the game, hands down. Especially on mages — which have intentionally low mobility — it's essential to have an escape option. <strong>This is a MUST USE in every single game. No exceptions.</strong></p>
+              </div>
+              <div class="card" style="border-top:3px solid var(--brand);margin-bottom:0">
+                <div class="card-title">🟣 Teleport — Only Recommended Second Spell</div>
+                <p style="font-size:.92rem;line-height:1.7">TP is the only second summoner evandabank recommends on Mel. Almost all midlaners run it, and crucially, <strong>you are not in range to use Ignite for the majority of fights</strong> — Mel plays from too far away for short-range summoners to be reliable.</p>
               </div>
             </div>
-            <div class="abl-card" id="abl-q" onclick="toggleAbility('q')">
-              <div class="abl-img-wrap"><img class="abl-img" src="images/Q.png" alt="Radiant Volley"></div>
-              <div class="abl-footer">
-                <span class="abl-letter">Q</span>
-                <span class="abl-name">Radiant Volley</span>
-                <span class="abl-chevron" id="chev-q">▾</span>
-              </div>
-            </div>
-            <div class="abl-card" id="abl-w" onclick="toggleAbility('w')">
-              <div class="abl-img-wrap"><img class="abl-img" src="images/W.png" alt="Barrier Reflect"></div>
-              <div class="abl-footer">
-                <span class="abl-letter">W</span>
-                <span class="abl-name">Barrier / Reflect</span>
-                <span class="abl-chevron" id="chev-w">▾</span>
-              </div>
-            </div>
-            <div class="abl-card" id="abl-e" onclick="toggleAbility('e')">
-              <div class="abl-img-wrap"><img class="abl-img" src="images/E.png" alt="Solar Snare"></div>
-              <div class="abl-footer">
-                <span class="abl-letter">E</span>
-                <span class="abl-name">Solar Snare</span>
-                <span class="abl-chevron" id="chev-e">▾</span>
-              </div>
-            </div>
-            <div class="abl-card" id="abl-r" onclick="toggleAbility('r')">
-              <div class="abl-img-wrap"><img class="abl-img" src="images/R.png" alt="Golden Eclipse"></div>
-              <div class="abl-footer">
-                <span class="abl-letter">R</span>
-                <span class="abl-name">Golden Eclipse</span>
-                <span class="abl-chevron" id="chev-r">▾</span>
+            <!-- RIGHT: video placeholder -->
+            <div style="background:var(--navy);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;min-height:220px;border-top:3px solid var(--brand)">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px;text-align:center">
+                <div style="width:52px;height:52px;background:rgba(76,187,110,0.15);border:2px solid var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--brand)">▶</div>
+                <div style="font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--white)">Summoner Spells Overview</div>
+                <div style="font-size:.8rem;color:rgba(255,255,255,0.4);letter-spacing:.5px">Video coming soon</div>
               </div>
             </div>
           </div>
 
-          <!-- PASSIVE PANEL -->
-          <div class="abl-panel" id="panel-passive">
-            <div class="abl-panel-inner">
-              <div class="abl-panel-header">
-                <div class="key-badge" style="width:44px;height:44px;font-size:1.1rem">P</div>
-                <div>
-                  <div class="abl-panel-title">Searing Brilliance</div>
-                  <div class="abl-panel-sub">Passive Stack Execution System</div>
-                </div>
-              </div>
-              <div class="abl-panel-body">
-                <div class="abl-video-wrap">
-                  <iframe class="abl-video" src="https://www.youtube.com/embed/t3WcazaFOoo?autoplay=1&loop=1&mute=1&playlist=t3WcazaFOoo&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="abl-panel-text">
-                  <p style="margin-bottom:14px">Mel's passive allows her to stack essence on enemy champions. These stacks increase an enemy's execute threshold. This threshold can be seen by a mark over the head of the enemy and a small bar on their HP. Lowkey just watch the video below to get the hang of it.</p>
-                  <p style="margin-bottom:6px;font-weight:600;color:#ffffff">Key Tips</p>
-                  <ul class="tip-list" style="">
-                    <li><span class="tip-num"></span><span>Stack management is essential for ultimate timing</span></li>
-                    <li><span class="tip-num"></span><span>Passive stacks enable execute threshold indicators</span></li>
-                    <li><span class="tip-num"></span><span>Multiple abilities can apply stacks efficiently</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Q PANEL -->
-          <div class="abl-panel" id="panel-q">
-            <div class="abl-panel-inner">
-              <div class="abl-panel-header">
-                <div class="key-badge" style="width:44px;height:44px;font-size:1.1rem">Q</div>
-                <div>
-                  <div class="abl-panel-title">Radiant Volley</div>
-                  <div class="abl-panel-sub">Primary Poke &amp; Stack Tool</div>
-                </div>
-              </div>
-              <div class="abl-panel-body">
-                <div class="abl-video-wrap">
-                  <video class="abl-video" src="videos/MelQ.mp4" autoplay loop muted playsinline></video>
-                </div>
-                <div class="abl-panel-text">
-                  <p style="margin-bottom:14px">Mel's Q is a long-range ability that fires a series of missiles. It functions like Kai'Sa Q, but it's an untargeted skillshot.</p>
-                  <p style="margin-bottom:6px;font-weight:600;color:#ffffff">Keynote</p>
-                  <p style="margin-bottom:14px">You will almost always hit 1 missile, but hitting all the missiles is tricky. Look to combo this spell with your E or your teammates' CC abilities.</p>
-                  <p style="margin-bottom:6px;font-weight:600;color:#ffffff">How to Use</p>
-                  <p style="margin-bottom:14px">This ability is your bread and butter. It's an excellent poke tool and can provide you with tons of stacks for your passive. Importantly though, do not always worry about hitting all of the projectiles. This ability is on a short cooldown and can be cycled very quickly. Honestly, you only need to hit 1 missile to get good poke and proc your Scorch/Comet or First Strike. No need to be perfect here — just aim it reasonably well and look to abuse the enemy on-cooldown.</p>
-                  <p style="margin-bottom:6px;font-weight:600;color:#ffffff">Key Tips</p>
-                  <ul class="tip-list" style="">
-                    <li><span class="tip-num"></span><span>Cast on cooldown for consistent passive stacks</span></li>
-                    <li><span class="tip-num"></span><span>Combo with E or teammate CC for full missile hits</span></li>
-                    <li><span class="tip-num"></span><span>Focus on 1–2 missile hits rather than perfection</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- W PANEL -->
-          <div class="abl-panel" id="panel-w">
-            <div class="abl-panel-inner">
-              <div class="abl-panel-header">
-                <div class="key-badge" style="width:44px;height:44px;font-size:1.1rem">W</div>
-                <div>
-                  <div class="abl-panel-title">Barrier / Reflect</div>
-                  <div class="abl-panel-sub">Most Complicated Ability in the Game</div>
-                </div>
-              </div>
-              <div class="abl-panel-body">
-                <div class="abl-video-wrap">
-                  <video class="abl-video" src="videos/MelW.mp4" autoplay loop muted playsinline></video>
-                </div>
-                <div class="abl-panel-text">
-                  <p style="margin-bottom:14px">Mel's W puts up a barrier for 0.75 seconds that grants her a burst of movespeed, reflects enemy projectiles, and prevents her from taking damage from all sources.</p>
-                  <p style="margin-bottom:6px;font-weight:600;color:#ffffff">Keynote</p>
-                  <p style="margin-bottom:10px">This is one of the most complicated abilities in the game. Firstly, the W will reflect spells back to their source at the point of reflection — the enemy still has time to dodge it, especially for long-range reflections.</p>
-                  <p style="margin-bottom:10px">Mel does <em>not</em> need to be the target of the spell to reflect it. If Mel walks in front of a Miss Fortune Q aimed at a teammate, the spell will still reflect back to hit Miss Fortune. And because Miss Fortune Q is a targeted spell, it is <strong>undodgeable</strong> as a reflection — targeted spells always hit the person who cast them.</p>
-                  <p style="margin-bottom:6px">Now, what will be reflected? Anything that Yasuo and Braum can block is considered a projectile. As a rule of thumb, anything fired horizontally — Veigar Baleful Strike, Katarina Q, Senna W — will be reflected. Anything shot from the ground or sky — Xerath R, Pantheon R, Veigar W — will <em>not</em> be reflected, though the damage will still be mitigated.</p>
-                  <p style="margin-bottom:6px;font-weight:600;color:#ffffff;margin-top:14px">Key Tips</p>
-                  <ul class="tip-list" style="">
-                    <li><span class="tip-num"></span><span>Can intercept spells aimed at teammates</span></li>
-                    <li><span class="tip-num"></span><span>Targeted spells always hit their caster when reflected</span></li>
-                    <li><span class="tip-num"></span><span>Very long cooldown (~35 seconds) — use wisely</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- E PANEL -->
-          <div class="abl-panel" id="panel-e">
-            <div class="abl-panel-inner">
-              <div class="abl-panel-header">
-                <div class="key-badge" style="width:44px;height:44px;font-size:1.1rem">E</div>
-                <div>
-                  <div class="abl-panel-title">Solar Snare</div>
-                  <div class="abl-panel-sub">Root / Slow — Passive Stack Engine</div>
-                </div>
-              </div>
-              <div class="abl-panel-body">
-                <div class="abl-video-wrap">
-                  <iframe class="abl-video" src="https://www.youtube.com/embed/VidVvuNBw-Q?autoplay=1&loop=1&mute=1&playlist=VidVvuNBw-Q&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="abl-panel-text">
-                  <p style="margin-bottom:14px">Mel's E is a black hole that travels in a straight line for a set distance (this distance does not change). Enemies in the center of the hole will take extra damage and be rooted. Enemies hit by any part of the hole will take a small amount of damage and stack Mel's passive.</p>
-                  <p style="margin-bottom:6px;font-weight:600;color:#ffffff">Keynote</p>
-                  <p style="margin-bottom:14px">Mel's E is an excellent source of passive stacking. It's important to note just how many stacks we can get here. In the case that we use Mel's E and the center hits the enemy champion, we will proc around 7 stacks. However, the hole does not stop after hitting a champion — if we managed to hit the enemy at the end of its range, rooting them in the process, we can get upwards of 10–12 stacks.</p>
-                  <p style="margin-bottom:6px;font-weight:600;color:#ffffff">How to Use</p>
-                  <p style="margin-bottom:14px">Mel's E can be hard to hit and will almost never result in rooting the enemy when cast from long range. Instead, begin auto attacking the enemy champion, only using E after the enemy has attempted to trade back, luring them into closer combat. If we use our E effectively and root the enemy champion, combined with the safety of having our W as a defensive spell, almost no champion in the early game can outtrade us. The only fallback is that our W is on a really long cooldown (~35 seconds). When W is on cooldown, be careful using E aggressively — failing to land the root can leave us open to a counter-engage from the enemy laner.</p>
-                  <p style="margin-bottom:6px;font-weight:600;color:#ffffff">Key Tips</p>
-                  <ul class="tip-list" style="">
-                    <li><span class="tip-num"></span><span>Use after enemy commits to trade, not as opener</span></li>
-                    <li><span class="tip-num"></span><span>~7 stacks for center hit, 10–12 stacks at max range root</span></li>
-                    <li><span class="tip-num"></span><span>Don't use aggressively when W is on cooldown</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- R PANEL -->
-          <div class="abl-panel" id="panel-r">
-            <div class="abl-panel-inner" style="border-top:3px solid var(--gold)">
-              <div class="abl-panel-header">
-                <div class="key-badge" style="width:44px;height:44px;font-size:1.1rem;background:var(--gold);color:var(--navy)">R</div>
-                <div>
-                  <div class="abl-panel-title" style="color:var(--gold-light)">Golden Eclipse</div>
-                  <div class="abl-panel-sub">Wait for the Golden Glow</div>
-                </div>
-              </div>
-              <div class="abl-panel-body">
-                <div class="abl-video-wrap">
-                  <iframe class="abl-video" src="https://www.youtube.com/embed/jZvs2Sn85Jo?autoplay=1&loop=1&mute=1&playlist=jZvs2Sn85Jo&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="abl-panel-text">
-                  <p style="margin-bottom:14px">Mel's ultimate does damage to all enemies with her passive applied to them. This damage is a flat number that increases slightly per the number of passive stacks applied to the enemy.</p>
-                  <p style="margin-bottom:6px;font-weight:600;color:#ffffff">Keynote</p>
-                  <p style="margin-bottom:14px">When an enemy is in our ultimate execute threshold, they will have a glowing icon over their heads. Additionally, our ultimate HUD icon will start glowing golden. Outside of very rare circumstances where you want to explode your ultimate early to avoid your stacks expiring, you will typically want to wait for these indicators before casting this spell.</p>
-                  <p style="margin-bottom:6px;font-weight:600;color:#ffffff">Key Tips</p>
-                  <ul class="tip-list" style="">
-                    <li><span class="tip-num"></span><span>Wait for glowing icon indicators before casting</span></li>
-                    <li><span class="tip-num"></span><span>Ultimate HUD icon glows golden when enemy is in execute range</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          <div class="info-box-amber">⚠️ Do not take Ignite — Mel plays from too far away to reliably use it in most fights. Flash + TP is the standard in every game without exception.</div>
         </div>
 
-        <div id="combos-sec" style="scroll-margin-top:130px">
-          <div class="section-head"><h3>Combos</h3><div class="section-rule"></div></div>
-          <div class="section-sub">Core trading sequences — W is situational and not included; weave it in based on the matchup</div>
-          <div class="combo-card featured">
-            <div class="combo-label"><strong>Bread &amp; Butter — E into Q</strong></div>
-            <div class="combo-seq"><span class="seq-key">E</span><span class="seq-arrow">→</span><span class="seq-key">Q</span></div>
-            <p class="combo-note">Use E first for the slow/root to guarantee more Q missiles connect. This is the core trading pattern for Mel in virtually every lane.</p>
+        <!-- ── RUNES ── -->
+        <div id="runes-sec" style="margin-bottom:36px;scroll-margin-top:130px">
+          <div class="section-head"><h3>Runes</h3><div class="section-rule"></div></div>
+          <div class="section-sub">Standard rune page — Arcane Comet every game</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;align-items:start">
+            <!-- LEFT: Runes image -->
+            <div style="border:1px solid var(--border);border-top:3px solid var(--brand);overflow:hidden;aspect-ratio:16/9">
+              <img src="images/Runes.png" alt="Mel Rune Page" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+            </div>
+            <!-- RIGHT: YouTube video -->
+            <div style="border:1px solid var(--border);border-top:3px solid var(--brand);overflow:hidden">
+              <iframe
+                src="https://www.youtube.com/embed/82oYXCH4ne8"
+                title="Mel Runes Guide"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style="width:100%;aspect-ratio:16/9;display:block;border:none">
+              </iframe>
+            </div>
           </div>
-          <div class="combo-card" style="border-left:4px solid var(--navy)">
-            <div class="combo-label"><strong>E + Flash Extension Combo</strong></div>
-            <div class="combo-seq"><span class="seq-key">E</span><span class="seq-arrow">→</span><span class="seq-key">Flash</span><span class="seq-arrow">→</span><span class="seq-key">Q</span></div>
-            <p class="combo-note">Flash during the cast-time of E to reposition mid-animation — similar to Ahri E + Flash. Use to surprise the enemy or extend E's effective range.</p>
-          </div>
-          <div class="combo-card">
-            <div class="combo-label"><strong>Maximum DPS — Auto Weave Combo</strong></div>
-            <div class="combo-seq"><span class="seq-key">E</span><span class="seq-arrow">→</span><span class="seq-key">Auto</span><span class="seq-arrow">→</span><span class="seq-key">Q</span><span class="seq-arrow">→</span><span class="seq-key">Auto</span><span class="seq-arrow">→</span><span class="seq-key">R</span></div>
-            <p class="combo-note">Weave auto attacks between spells for maximum DPS. Most effective against melee champions who can't trade back at auto range. Against other mages, this brings you into their spell range — use with caution.</p>
-          </div>
-          <div class="info-box">
-            <strong>Note on W in combos:</strong> Mel does not have many rigid combos because W usage is entirely matchup-dependent. None of the above combos include W — but you should weave it in whenever you need to block or reflect the enemy's key ability. W is a reactive tool, not a fixed combo step.
+          <div class="g2">
+            <div class="card">
+              <div class="card-title">Why Arcane Comet?</div>
+              <p style="font-size:.9rem;line-height:1.7">Mel's long range makes it nearly guaranteed that Q will proc Comet and Scorch on every trade — providing roughly 50 bonus damage early. This heavily outshines First Strike and Summon Aery. Comet is the only keystone Mel should ever run.</p>
+            </div>
+            <div class="card">
+              <div class="card-title">Why Scorch?</div>
+              <p style="font-size:.9rem;line-height:1.7">Scorch can feel like a second Keystone in lane — 20 damage every 10 seconds is enormous early on. Hold an ability to proc it on cooldown. By your first reset, Scorch may have already dealt 200+ damage. It provides nothing late game, but the early lane dominance it enables is unmatched.</p>
+            </div>
+            <div class="card">
+              <div class="card-title">Why Presence of Mind?</div>
+              <p style="font-size:.9rem;line-height:1.7">Mel is one of the most mana-hungry mages — Radiant Volley costs 110 mana at max rank. Presence of Mind gives back mana on procs and restores 15% max mana on takedowns. Not the strongest secondary rune, but it enables extra casts in the early game that other options can't match.</p>
+            </div>
+            <div class="card">
+              <div class="card-title">Why Legend: Haste?</div>
+              <p style="font-size:.9rem;line-height:1.7">Running a burn build (Blackfire Torch + Liandry's) means having abilities off cooldown to stack burns is critical. 15 ability haste from Legend: Haste is a genuine game-changer. Current mage items make it almost impossible to reach meaningful haste without this rune.</p>
+            </div>
           </div>
         </div>
+
+        <!-- ── ITEMS ── -->
+        <div id="items-sec" style="scroll-margin-top:130px">
+          <div class="section-head"><h3>Items</h3><div class="section-rule"></div></div>
+          <div class="section-sub">Build path and situational picks</div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start">
+
+            <!-- LEFT: YouTube video -->
+            <div style="background:var(--navy);border:1px solid var(--border);border-top:3px solid var(--brand);overflow:hidden;position:sticky;top:130px">
+              <iframe
+                src="https://www.youtube.com/embed/sKop_6L3MNs"
+                title="Mel Items Guide"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style="width:100%;aspect-ratio:16/9;display:block;border:none">
+              </iframe>
+            </div>
+
+            <!-- RIGHT: tab nav + content -->
+            <div>
+              <div class="tab-bar">
+                <button class="tab-btn active" onclick="switchTab(this,'t-start')">Starting Items</button>
+                <button class="tab-btn" onclick="switchTab(this,'t-boots')">Boots</button>
+                <button class="tab-btn" onclick="switchTab(this,'t-core')">Core Build</button>
+                <button class="tab-btn" onclick="switchTab(this,'t-situational')">Situational</button>
+              </div>
+
+              <div id="t-start" class="tab-pane active">
+                <div class="g3">
+                  <div class="item-card" style="border-top:3px solid var(--brand)">
+                    <div class="item-icon">💍</div>
+                    <div class="name">Doran's Ring</div>
+                    <div class="note">Every game, no exceptions. Mel cannot make good use of other starting items.</div>
+                  </div>
+                  <div class="item-card">
+                    <div class="item-icon">🧪</div>
+                    <div class="name">2× Health Potions</div>
+                    <div class="note">Start your first potion at ~180–200 damage taken. Upgrade to Refillable on first or second reset.</div>
+                  </div>
+                  <div class="item-card">
+                    <div class="item-icon">👁️</div>
+                    <div class="name">Warding Totem</div>
+                    <div class="note">Must purchase on every champion. Swap to Farsight Alteration in the late game.</div>
+                  </div>
+                </div>
+                <div class="info-box" style="margin-top:12px"><strong>First reset priority:</strong> Spend ALL your gold — do not leave base with 300g unspent. Build toward Lost Chapter first (it builds into all mage starting items and gives mana on level-up). Only buy generic boots before completing your first full item.</div>
+              </div>
+
+              <div id="t-boots" class="tab-pane">
+                <div style="display:flex;flex-direction:column;gap:12px">
+                  <div class="item-card" style="border-top:3px solid var(--brand);text-align:left;display:flex;align-items:flex-start;gap:14px;padding:16px">
+                    <div class="item-icon" style="margin:0;flex-shrink:0">👟</div>
+                    <div>
+                      <div class="name" style="text-align:left;margin-bottom:6px">Sorcerer's Shoes</div>
+                      <div class="note" style="text-align:left">Default boots in all cases. Best upgrade of all shoe types — always build these if you win Feats of Strength.</div>
+                    </div>
+                  </div>
+                  <div class="item-card" style="border-top:3px solid var(--navy);text-align:left;display:flex;align-items:flex-start;gap:14px;padding:16px">
+                    <div class="item-icon" style="margin:0;flex-shrink:0">👟</div>
+                    <div>
+                      <div class="name" style="text-align:left;margin-bottom:6px">Ionian Boots of Lucidity</div>
+                      <div class="note" style="text-align:left">Run instead of Sorcerer's Shoes only when the enemy has 2–3 champions with significant magic resist built. Swiftness boots are never worth it — Mel doesn't need gap-closing movespeed.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="t-core" class="tab-pane">
+                <p style="font-size:.88rem;color:var(--text-muted);margin-bottom:14px">This is a <strong>burn build</strong>. The goal is to apply persistent damage through Blackfire Torch and Liandry's procs, stacking burns every time abilities come off cooldown.</p>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                  <div class="item-card" style="border-top:3px solid var(--brand);text-align:left;display:flex;align-items:flex-start;gap:14px;padding:14px">
+                    <div class="item-icon" style="margin:0;flex-shrink:0">🔥</div>
+                    <div><div class="name" style="text-align:left;margin-bottom:4px">Blackfire Torch</div><div class="note" style="text-align:left">Best first item. Burning effect on every ability landed. Provides the mana needed to sustain expensive spells early.</div></div>
+                  </div>
+                  <div class="item-card" style="border-top:3px solid var(--brand);text-align:left;display:flex;align-items:flex-start;gap:14px;padding:14px">
+                    <div class="item-icon" style="margin:0;flex-shrink:0">🌋</div>
+                    <div><div class="name" style="text-align:left;margin-bottom:4px">Liandry's Torment</div><div class="note" style="text-align:left">Second item. Burn does more damage than Blackfire, but gives HP instead of mana — building it first causes OOM issues.</div></div>
+                  </div>
+                  <div class="item-card" style="border-top:3px solid var(--navy);text-align:left;display:flex;align-items:flex-start;gap:14px;padding:14px">
+                    <div class="item-icon" style="margin:0;flex-shrink:0">🎩</div>
+                    <div><div class="name" style="text-align:left;margin-bottom:4px">Rabadon's Deathcap</div><div class="note" style="text-align:left">Third or fourth item. Multiplies total AP by 30% — massive power spike for poke and sustained burn damage.</div></div>
+                  </div>
+                  <div class="item-card" style="text-align:left;display:flex;align-items:flex-start;gap:14px;padding:14px">
+                    <div class="item-icon" style="margin:0;flex-shrink:0">🕳️</div>
+                    <div><div class="name" style="text-align:left;margin-bottom:4px">Void Staff</div><div class="note" style="text-align:left">Build when 2–3 enemies have significant magic resist. Mathematically gold-efficient at ~120 MR on the enemy.</div></div>
+                  </div>
+                  <div class="item-card" style="text-align:left;display:flex;align-items:flex-start;gap:14px;padding:14px">
+                    <div class="item-icon" style="margin:0;flex-shrink:0">⌛</div>
+                    <div><div class="name" style="text-align:left;margin-bottom:4px">Zhonya's Hourglass</div><div class="note" style="text-align:left">Third or fourth vs burst/engage comps, AD assassins (Zed, Talon), or Malphite. Stasis is the best active in the game.</div></div>
+                  </div>
+                  <div class="item-card" style="text-align:left;display:flex;align-items:flex-start;gap:14px;padding:14px">
+                    <div class="item-icon" style="margin:0;flex-shrink:0">🔮</div>
+                    <div><div class="name" style="text-align:left;margin-bottom:4px">Banshee's Veil</div><div class="note" style="text-align:left">Fourth or fifth. Underrated. Best against heavy magic damage or champions that can't poke the spellshield off (e.g. Annie).</div></div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="t-situational" class="tab-pane">
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div class="card" style="margin-bottom:0">
+                    <div class="card-title">Bloodletter's Curse</div>
+                    <p style="font-size:.9rem;line-height:1.65">Extremely underrated. Two Mel ability casts can apply full stacks — a near-instant 30% magic shred. If you have 3 AP champions on your team, this becomes a must-buy third item. <strong>Only one champion per team should build it.</strong></p>
+                  </div>
+                  <div class="card" style="margin-bottom:0">
+                    <div class="card-title">Crypt Bloom</div>
+                    <p style="font-size:.9rem;line-height:1.65">Very situational — hard to tell when you're getting real value. Not much different from Void Staff; both are anti-MR items. Build whichever is stronger in the current meta, or just default to Void Staff (simpler).</p>
+                  </div>
+                  <div class="card" style="margin-bottom:0">
+                    <div class="card-title">Cosmic Drive</div>
+                    <p style="font-size:.9rem;line-height:1.65">Gives movespeed on ability hits — a unique stat that requires skill to use properly. evandabank personally does not build this and recommends most players avoid it unless they're confident in kiting with the speed bonus.</p>
+                  </div>
+                  <div class="card" style="margin-bottom:0">
+                    <div class="card-title">Null-Magic Mantle (Early)</div>
+                    <p style="font-size:.9rem;line-height:1.65">Buy this on your first reset in lanes where magic burst is a death threat — Annie, LeBlanc, Sylas. Upgrade into Verdant Barrier / Banshee's later. Never buy Mercury Treads — they are a bait on mages.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end right col -->
+
+          </div><!-- end grid -->
+        </div>
+
       </div>
     </div>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer style="background: var(--navy); color: rgba(255,255,255,0.6); padding: 24px 48px; text-align: center; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1);">
-    <div style="max-width: 800px; margin: 0 auto;">
+  <footer style="background:var(--navy);color:rgba(255,255,255,0.6);padding:24px 48px;text-align:center;font-size:0.85rem;border-top:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:800px;margin:0 auto;">
       <p>The Ultimate Mel Compendium by evandabank • © 2026</p>
-      <p style="margin-top: 8px; font-size: 0.75rem;">Built for the League of Legends community</p>
+      <p style="margin-top:8px;font-size:0.75rem;">Built with ❤️ for the League of Legends community</p>
     </div>
   </footer>
 </div>
