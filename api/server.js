@@ -22,8 +22,18 @@ app.use(session({
   cookie: { secure: IN_PROD, httpOnly: true, sameSite: 'lax' }
 }));
 
-// Serve the static frontend from the repo root so testing is just one server
+// Serve the static frontend from the repo root — registered after routes
 const webRoot = path.join(__dirname, '..');
+
+// Root handler: if authenticated serve the main site, otherwise show signin page
+app.get('/', (req, res) => {
+  if (req.session && req.session.user) {
+    return res.sendFile(path.join(webRoot, 'index.html'));
+  }
+  return res.sendFile(path.join(webRoot, 'signin.html'));
+});
+
+// Serve static assets (CSS, JS, images, other pages)
 app.use(express.static(webRoot));
 
 const CLIENT_ID = process.env.PATREON_CLIENT_ID;
@@ -48,6 +58,8 @@ app.get('/auth/patreon', (req, res) => {
     state
   });
   const url = `https://www.patreon.com/oauth2/authorize?${params.toString()}`;
+  console.log('PATREON AUTHORIZE URL ->', url);
+  console.log('Configured PATREON_REDIRECT_URI ->', REDIRECT_URI);
   res.redirect(url);
 });
 
