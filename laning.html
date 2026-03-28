@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,107 @@
   <meta name="description" content="Master Mel's laning phase with wave management, early trades, Level 2 setups, and optimal warding positions.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ── WARDING SECTION WRAPPER ── */
+    .ward-section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      box-shadow: var(--shadow);
+    }
+
+    /* ── SHARED ROW BASE ── */
+    .ward-row {
+      display: grid;
+      gap: 28px;
+      align-items: flex-start;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+
+    .ward-row:last-of-type {
+      padding-bottom: 0;
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    /* Both layouts use identical column widths for consistent image size */
+    .ward-row.img-left  { grid-template-columns: 260px 1fr; }
+    .ward-row.text-left { grid-template-columns: 1fr 260px; }
+
+    /* Order helpers — image always renders in its declared grid slot */
+    .ward-row.img-left  .ward-map  { order: 1; }
+    .ward-row.img-left  .ward-text { order: 2; }
+    .ward-row.text-left .ward-text { order: 1; }
+    .ward-row.text-left .ward-map  { order: 2; }
+
+    /* ── TEXT BLOCK ── */
+    .ward-text h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.0rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .ward-text p {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: var(--text-body);
+    }
+
+    .ward-text p strong {
+      color: var(--text-dark);
+    }
+
+    /* ── MAP IMAGE / PLACEHOLDER ── */
+    .ward-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      border: 1px solid var(--border-dark);
+      background: var(--navy);
+    }
+
+    /* Map image */
+    .ward-map {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      border: 1px solid var(--border-dark);
+      flex-shrink: 0;
+    }
+
+
+
+    /* ── SWEEP NOTE ── */
+    .ward-sweep-note {
+      background: var(--amber-bg);
+      border: 1px solid #e0c47a;
+      border-left: 4px solid var(--gold);
+      padding: 14px 18px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-top: 28px;
+      color: var(--text-body);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .ward-row.img-left,
+      .ward-row.text-left {
+        grid-template-columns: 1fr;
+      }
+      .ward-row.img-left  .ward-map,
+      .ward-row.text-left .ward-map  { order: 1; }
+      .ward-row.img-left  .ward-text,
+      .ward-row.text-left .ward-text { order: 2; }
+    }
+  </style>
 </head>
 <body>
 
@@ -29,7 +129,7 @@
       <button class="lang-btn" data-lang="pl" onclick="selLang(this)"><span class="flag">🇵🇱</span>Polski</button>
       <button class="lang-btn" data-lang="ru" onclick="selLang(this)"><span class="flag">🇷🇺</span>Русский</button>
       <button class="lang-btn" data-lang="ko" onclick="selLang(this)"><span class="flag">🇰🇷</span>한국어</button>
-      <button class="lang-btn" data-lang="ja" onclick="selLang(this)"><span class="flag">🇯🇵</span>日本語</button>
+      <button class="lang-btn" data-lang="ja" onclick="selLang(this)"><span class="flag">🇯🇵</span>日본語</button>
     </div>
     <button class="lang-confirm" onclick="confirmLang()">Continue to Guide →</button>
   </div>
@@ -37,7 +137,6 @@
 
 <!-- TOP NAV -->
 <header class="topnav-header" id="topnav">
-  <!-- Brand bar -->
   <div class="topnav-brand-bar">
     <div class="topnav-brand-left">
       <div>
@@ -51,14 +150,12 @@
       <button class="lang-switch-btn" onclick="openLang()">🌐 <span id="lang-label">English</span></button>
     </div>
   </div>
-
-  <!-- Nav links -->
   <nav class="topnav-nav">
-    <a href="index.html" class="nav-item">Intro / Home</a>
+    <a href="index.html"    class="nav-item">Intro / Home</a>
     <a href="abilities.html" class="nav-item">Abilities</a>
-    <a href="laning.html" class="nav-item">Laning / Early Game</a>
-    <a href="pregame.html" class="nav-item">Pregame</a>
-    <a href="midgame.html" class="nav-item">Mid Game</a>
+    <a href="laning.html"   class="nav-item active">Laning / Early Game</a>
+    <a href="pregame.html"  class="nav-item">Pregame</a>
+    <a href="midgame.html"  class="nav-item">Mid Game</a>
     <a href="lategame.html" class="nav-item">Late Game</a>
     <a href="matchups.html" class="nav-item">Matchups</a>
   </nav>
@@ -66,42 +163,49 @@
 
 <div class="layout">
   <main class="main">
-
     <div class="page active" id="page-laning">
+
+      <!-- PAGE HERO -->
       <div class="page-hero">
         <div class="hero-eyebrow">Laning &amp; Early Game</div>
         <h2>Laning &amp; Early Game</h2>
         <p class="hero-desc">Wave management fundamentals, early trade patterns, Level 2 setups, and warding positions to control vision.</p>
       </div>
+
+      <!-- SUBNAV -->
       <div class="page-subnav">
         <div class="subnav-item active" onclick="subnavScroll(this,'laning-sec')">Early Game</div>
-        <div class="subnav-item" onclick="subnavScroll(this,'warding-sec')">Warding</div>
+        <div class="subnav-item"        onclick="subnavScroll(this,'warding-sec')">Warding</div>
       </div>
+
       <div class="page-body">
 
-        <div id="laning-sec" style="margin-bottom:36px;scroll-margin-top:130px">
+        <!-- ── EARLY GAME ── -->
+        <div id="laning-sec" style="margin-bottom:40px; scroll-margin-top:130px">
           <div class="section-head"><h3>Early Game</h3><div class="section-rule"></div></div>
           <div class="section-sub">Laning fundamentals and wave management</div>
+
           <div class="g2">
             <div class="card">
               <div class="card-title">Wave Management</div>
-              <ul class="tip-list">
-                <li><span class="tip-num">Slow</span><span>Slow push into a crash before major objectives (Drake, Herald, Baron)</span></li>
-                <li><span class="tip-num">Freeze</span><span>Freeze near your tower when ahead — deny XP and gold from enemy</span></li>
-                <li><span class="tip-num">Fast</span><span>Fast push and roam after winning a decisive trade</span></li>
-                <li><span class="tip-num">Q Zone</span><span>Use Q to deny enemies from walking into a wave reset</span></li>
+              <ul class="tip-list" style="color:var(--text-body)">
+                <li><span class="tip-num" style="color:var(--brand)">Slow</span><span>Slow push into a crash before major objectives (Drake, Herald, Baron)</span></li>
+                <li><span class="tip-num" style="color:var(--brand)">Freeze</span><span>Freeze near your tower when ahead — deny XP and gold from enemy</span></li>
+                <li><span class="tip-num" style="color:var(--brand)">Fast</span><span>Fast push and roam after winning a decisive trade</span></li>
+                <li><span class="tip-num" style="color:var(--brand)">Q Zone</span><span>Use Q to deny enemies from walking into a wave reset</span></li>
               </ul>
             </div>
             <div class="card">
               <div class="card-title">Early Trade Pattern</div>
-              <ul class="tip-list">
-                <li><span class="tip-num">Lvl 2</span><span>Prioritize hitting Level 2 fast — W+E at Level 2 is a very strong trade</span></li>
-                <li><span class="tip-num">Poke</span><span>Abuse short W poke trades — extended fights only favor you with 3 stacks</span></li>
-                <li><span class="tip-num">Patience</span><span>Don't trade when the wave is crashing into your tower — bad position</span></li>
-                <li><span class="tip-num">Setup</span><span>Set up Triple Brittle whenever Q comes off cooldown</span></li>
+              <ul class="tip-list" style="color:var(--text-body)">
+                <li><span class="tip-num" style="color:var(--brand)">Lvl 2</span><span>Prioritize hitting Level 2 fast — W+E at Level 2 is a very strong trade</span></li>
+                <li><span class="tip-num" style="color:var(--brand)">Poke</span><span>Abuse short W poke trades — extended fights only favor you with 3 stacks</span></li>
+                <li><span class="tip-num" style="color:var(--brand)">Patience</span><span>Don't trade when the wave is crashing into your tower — bad position</span></li>
+                <li><span class="tip-num" style="color:var(--brand)">Setup</span><span>Set up Triple Brittle whenever Q comes off cooldown</span></li>
               </ul>
             </div>
           </div>
+
           <div class="g3">
             <div class="card">
               <div class="card-title">Summoner Spells</div>
@@ -118,63 +222,66 @@
           </div>
         </div>
 
+        <!-- ── WARDING ── -->
         <div id="warding-sec" style="scroll-margin-top:130px">
           <div class="section-head"><h3>Warding</h3><div class="section-rule"></div></div>
           <div class="section-sub">Vision control as mid lane</div>
-          <div class="ward-card">
-            <div class="ward-badge">River Bush</div>
-            <div class="ward-title">Top River Bush (Dragon Side)</div>
-            <p>Ward the top side river bush at 1:30 before the wave hits. This covers the standard level 2 invade path and gives you early warning on jungle position to plan your level 2 trade.</p>
-          </div>
-          <div class="ward-card">
-            <div class="ward-badge">Pixel Bush</div>
-            <div class="ward-title">Pixel Bush (Both Sides)</div>
-            <p>Pixel bushes on both sides of mid river give you full vision of enemy jungle pathing. Drop these when you have priority. Critical for tracking invades and roam timing.</p>
-          </div>
-          <div class="ward-card">
-            <div class="ward-badge">Enemy Jungle</div>
-            <div class="ward-title">Enemy Blue/Red Side Jungle Entrance</div>
-            <p>When your team has mid priority and you're shoving the wave, deep ward into the enemy jungle entrance to track camps and predict ganks before they arrive at mid.</p>
-          </div>
-          <div class="ward-card">
-            <div class="ward-badge">Dragon / Baron</div>
-            <div class="ward-title">Objective Vision Control</div>
-            <p>At 4:30 start building vision toward Dragon. Ward the dragon pit entrance and the connecting bushes. Having vision here 30 seconds before objective spawn gives your team full control of the fight setup.</p>
-          </div>
-          <div class="info-box">
-            <strong>Sweeping:</strong> Always sweep the mid river and lane bushes before extended trades or all-ins. A hidden enemy ward tips off your opponent and lets them dodge your combo setup.
-          </div>
-        </div>
-      </div>
-    </div>
 
-          <div class="card">
-            <div class="card-title">Wave Management</div>
-            <p>Learn how to control minion waves to create favorable trading opportunities and pressure your lane opponent.</p>
-          </div>
-        </div>
+          <div class="ward-section">
 
-        <div>
-          <div class="section-head"><h3>Warding</h3><div class="section-rule"></div></div>
-          <div class="section-sub">Vision control positions</div>
+            <!-- ROW 1 · text left, image right -->
+            <div class="ward-row text-left">
+              <div class="ward-text">
+                <h4>Ward Placement Philosophy</h4>
+                <p>Warding can be a very confusing concept for most people, and at the most advanced forms of play, can require a lot of coordination. Let's try to keep it simple. <strong>We always place a ward that we think can keep us alive if we see the enemy jungler.</strong></p>
+              </div>
+              <img src="ward-placeholder.png" alt="Ward placement map" class="ward-map">
+            </div>
 
-          <div class="ward-card">
-            <div class="ward-title">River Ward Spots</div>
-            <p>Key warding positions to control vision and prevent ganks.</p>
-            <div class="ward-badge">HIGH PRIORITY</div>
-          </div>
-        </div>
+            <!-- ROW 2 · image left, text right -->
+            <div class="ward-row img-left">
+              <img src="ward-placeholder.png" alt="Stealth champion warding map" class="ward-map">
+              <div class="ward-text">
+                <h4>Stealth Champion Warding</h4>
+                <p>For example, warding the river bushes against Shaco doesn't do anything. He is just going to use his Q over the wall. Instead, we want to ward his jungle camps (usually raptors). The same is true for champions like Evelynn and Twitch.</p>
+              </div>
+            </div>
 
-      </div>
-    </div>
+            <!-- ROW 3 · text left, image right -->
+            <div class="ward-row text-left">
+              <div class="ward-text">
+                <h4>Standard Jungler Warding</h4>
+                <p>Against more typical junglers, we want to ward the river bush that the enemy jungler is expected to come from. If we believe that the enemy is clearing from top to bot (80% of games this is true), then we can place a ward on the bottom river bush at 3:00. Why 3:00? Most junglers will fullclear or take 5 camps before ganking, this typically happens around the 3:00–3:30 mark.</p>
+              </div>
+              <img src="ward-placeholder.png" alt="Standard jungler warding map" class="ward-map">
+            </div>
 
+            <!-- ROW 4 · image left, text right -->
+            <div class="ward-row img-left">
+              <img src="ward-placeholder.png" alt="Early game ganker warding map" class="ward-map">
+              <div class="ward-text">
+                <h4>Early Game Gankers</h4>
+                <p>Lastly, if we are against an enemy jungler that loves to level 3 gank (Ex. Rek'Sai, Elise) then we want to place an early ward on the side that the enemy jungler begins clearing on (place a ward in top river bush if they start topside).</p>
+              </div>
+            </div>
+
+            <!-- Sweeping tip -->
+            <div class="ward-sweep-note">
+              <strong>Sweeping:</strong> Always sweep the mid river and lane bushes before extended trades or all-ins. A hidden enemy ward tips off your opponent and lets them dodge your combo setup.
+            </div>
+
+          </div><!-- /.ward-section -->
+        </div><!-- /#warding-sec -->
+
+      </div><!-- /.page-body -->
+    </div><!-- /#page-laning -->
   </main>
 
   <!-- FOOTER -->
-  <footer style="background: var(--navy); color: rgba(255,255,255,0.6); padding: 24px 48px; text-align: center; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1);">
-    <div style="max-width: 800px; margin: 0 auto;">
+  <footer style="background:var(--navy); color:rgba(255,255,255,0.6); padding:24px 48px; text-align:center; font-size:0.85rem; border-top:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:800px; margin:0 auto;">
       <p>The Ultimate Mel Compendium by evandabank • © 2026</p>
-      <p style="margin-top: 8px; font-size: 0.75rem;">Built with ❤️ for the League of Legends community</p>
+      <p style="margin-top:8px; font-size:0.75rem;">Built with ❤️ for the League of Legends community</p>
     </div>
   </footer>
 </div>
