@@ -68,7 +68,11 @@ body {
  
 /* ── LAYOUT ── */
 .layout { display:flex; flex-direction:column; min-height:100vh; }
- 
+
+.champ-icon { width:24px; height:24px; border-radius:4px; margin-right:6px; vertical-align:middle; }
+.toc-link { display:flex; align-items:center; gap:6px; padding:8px 10px; border:1px solid var(--border); border-radius:4px; background:var(--white); color:var(--text-body); text-decoration:none; font-size:0.9rem; transition:transform 0.12s ease, box-shadow 0.12s ease; }
+.toc-link:hover { transform:translateY(-1px); box-shadow:var(--shadow); background:#ffffff; }
+
 /* ── TOP HEADER BAR ── */
 .topnav-header {
   background: var(--navy);
