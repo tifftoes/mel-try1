@@ -152,4 +152,87 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+  transformMatchupCards();
 });
+
+function transformMatchupCards() {
+  const idToImage = {
+    aphelios:'Aphelios', ashe:'Ashe', 'aurelion-sol':'AurelionSol', brand:'Brand', caitlyn:'Caitlyn', corki:'Corki', draven:'Draven', ezreal:'Ezreal', heimerdinger:'Heimerdinger', hwei:'Hwei', jhin:'Jhin', jinx:'Jinx', 'kaisa':'KaiSa', kalista:'Kalista', karma:'Karma', karthus:'Karthus', 'kogmaw':'KogMaw', lucian:'Lucian', lux:'Lux', mel:'Mel', 'miss-fortune':'MissFortune', morgana:'Morgana', nilah:'Nilah', samira:'Samira', senna:'Senna', seraphine:'Seraphine', sivir:'Sivir', smolder:'Smolder', tristana:'Tristana', twitch:'Twitch', varus:'Varus', vayne:'Vayne', xayah:'Xayah', yunara:'Yunara', zeri:'Zeri', ziggs:'Ziggs', zyra:'Zyra'
+  };
+
+  const standardSummoners = [
+    'Flash.png',
+    'Teleport.png'
+  ];
+  const standardBuild = ['blackfireTorch.jpg','sorcBoots.jpg','cosmicDrive.jpg','shadowflame.jpg','rabadons.jpg','voidStaff.jpg','zhonyas.jpg'];
+
+  const difficultyMap = {
+    aphelios: 3, ashe: 3, 'aurelion-sol': 4, brand: 5, caitlyn: 4, corki: 4, draven: 5, ezreal: 3,
+    heimerdinger: 6, hwei: 6, jhin: 4, jinx: 4, 'kaisa': 5, kalista: 5, karma: 2, karthus: 4,
+    'kogmaw': 5, lucian: 4, lux: 3, mel: 2, 'miss-fortune': 4, morgana: 3, nilah: 5, samira: 5,
+    senna: 3, seraphine: 4, sivir: 4, smolder: 5, tristana: 4, twitch: 5, varus: 5, vayne: 7,
+    xayah: 5, yunara: 6, zeri: 6, ziggs: 4, zyra: 4
+  };
+
+  const calcDifficultyBar = (score) => {
+    const total = 8;
+    const normalized = Math.min(Math.max(score, 1), total);
+    const colors = ['#31cc45', '#2ebf47', '#26ab3c', '#c6d12d', '#f7c94f', '#ffb944', '#ff7a1d', '#ff2d00'];
+
+    const segments = [];
+    for (let i = 1; i <= total; i++) {
+      const idx = i - 1;
+      if (i <= normalized) {
+        segments.push(`<div class="matchup-difficulty-step" style="background:${colors[idx]};"></div>`);
+      } else {
+        segments.push(`<div class="matchup-difficulty-step inactive"></div>`);
+      }
+    }
+    return segments.join('');
+  };
+
+  const cards = document.querySelectorAll('#matchup-cards .card');
+  cards.forEach(card => {
+    const titleEl = card.querySelector('.card-title');
+    const name = titleEl ? titleEl.textContent.trim() : '';
+    const id = card.id || name.toLowerCase().replace(/[^a-z\d]+/g, '-');
+    const difficultyValue = difficultyMap[id] || 4;
+    const difficultySteps = calcDifficultyBar(difficultyValue);
+
+    const existingDetails = Array.from(card.children).filter(el => !el.classList.contains('card-title'));
+    const strategyHtml = existingDetails.map(el => el.outerHTML).join('');
+
+    const imageKey = idToImage[id] || name.replace(/[^a-zA-Z]/g,'');
+    const imagePath = `images/champions/${imageKey}.png`;
+
+    card.classList.add('matchup-card');
+    card.innerHTML = `
+      <div class="matchup-entry">
+        <div class="matchup-meta">
+          <h3 class="matchup-name">${name}</h3>
+          <div class="matchup-difficulty-title">Matchup Difficulty</div>
+          <div class="matchup-difficulty-bar">${difficultySteps}</div>
+          <div class="matchup-stats">
+            <div class="matchup-block">
+              <span>Summoners</span>
+              <div class="matchup-icons">
+                ${standardSummoners.map(s => `<img src="images/${s}" alt="${s.split('.')[0]}">`).join('')}
+              </div>
+            </div>
+            <div class="matchup-block">
+              <span>Recommended Build</span>
+              <div class="matchup-icons">
+                ${standardBuild.map(item => `<img src="images/${item}" alt="${item.split('.')[0]}">`).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+        <img class="matchup-image" src="${imagePath}" alt="${name}">
+      </div>
+      <div class="matchup-strategy">
+        <h4>Strategy</h4>
+        ${strategyHtml}
+      </div>
+    `;
+  });
+}
