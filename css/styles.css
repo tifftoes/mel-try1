@@ -69,9 +69,37 @@ body {
 /* ── LAYOUT ── */
 .layout { display:flex; flex-direction:column; min-height:100vh; }
 
-.champ-icon { width:56px; height:56px; border-radius:8px; margin:0; vertical-align:middle; object-fit:contain; }
-.toc-link { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:12px 8px; border:1px solid var(--border); border-radius:8px; background:var(--white); color:var(--text-body); text-decoration:none; font-size:0.9rem; transition:transform 0.12s ease, box-shadow 0.12s ease; min-height:110px; text-align:center; }
-.toc-link:hover { transform:translateY(-2px); box-shadow:var(--shadow); background:#ffffff; }
+#botlane-toc .champ-icon {
+  width:64px !important;
+  height:64px !important;
+  border-radius:8px;
+  margin:0;
+  object-fit:contain;
+}
+
+#botlane-toc .toc-link {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:8px;
+  padding:12px 10px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:var(--white);
+  color:var(--text-body);
+  text-decoration:none;
+  font-size:0.92rem;
+  transition:transform 0.12s ease, box-shadow 0.12s ease;
+  min-height:120px;
+  text-align:center;
+}
+
+#botlane-toc .toc-link:hover {
+  transform:translateY(-2px);
+  box-shadow:var(--shadow);
+  background:#ffffff;
+}
 
 /* ── TOP HEADER BAR ── */
 .topnav-header {
