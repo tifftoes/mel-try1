@@ -503,9 +503,10 @@ body {
  
 /* ── ABOUT ── */
 .about-block { display:flex; gap:48px; align-items:flex-start; }
-.about-avatar { width:340px !important; min-width:340px !important; height:calc(100vh - 220px) !important; min-height:260px !important; background:var(--brand); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:900; color:var(--white); flex-shrink:0 !important; overflow:hidden !important; border-radius:8px !important; border:1px solid var(--border) !important; }
+.about-avatar { width:360px !important; min-width:360px !important; height:calc(100vh - 160px) !important; background:var(--brand); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:900; color:var(--white); flex-shrink:0 !important; overflow:hidden !important; border-radius:8px !important; border:1px solid var(--border) !important; }
 .about-avatar img { width:100% !important; height:100% !important; object-fit:cover !important; display:block !important; }
-.about-text-container { margin-left:26px !important; }
+.about-text-container { margin-left:34px !important; max-width:calc(100% - 420px); }
+.card { min-height: calc(100vh - 160px); align-items:flex-start; }
 .about-text-container .about-name { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:4px; }
 .about-text-container .about-tagline { font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--brand); margin-bottom:14px; }
 .about-text-container .about-desc { font-size:0.95rem; line-height:1.75; margin-bottom:10px; }
