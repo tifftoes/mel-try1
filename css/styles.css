@@ -43,7 +43,7 @@ body {
 #lang-overlay {
   position: fixed; inset:0; z-index:9999;
   background: rgba(15,25,35,0.9);
-  display: flex; align-items:center; justify-content:center;
+  display: none; align-items:center; justify-content:center;
   backdrop-filter: blur(8px);
 }
 .lang-modal {
