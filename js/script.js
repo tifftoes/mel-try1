@@ -162,9 +162,9 @@ function transformMatchupCards() {
 
   const standardSummoners = [
     'Flash.png',
-    'Teleport.png'
+    'teleport.png'
   ];
-  const standardBuild = ['blackfireTorch.jpg','sorcBoots.jpg','cosmicDrive.jpg','shadowflame.jpg','rabadons.jpg','voidStaff.jpg','zhonyas.jpg'];
+  const standardBuild = ['blackfireTorch.jpg','sorcBoots.jpg','cosmicDrive.jpg','Shadowflame.jpg','rabadons.jpg','voidStaff.jpg','zhonyas.jpg'];
 
   const difficultyMap = {
     aphelios: 3, ashe: 3, 'aurelion-sol': 4, brand: 5, caitlyn: 4, corki: 4, draven: 5, ezreal: 3,
