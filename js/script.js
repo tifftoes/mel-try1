@@ -1,26 +1,29 @@
 // ── ABILITY EXPAND TOGGLE ──
 function toggleAbility(key) {
-  const keys = ['q','w','e','r','passive'];
+  const keys = ['passive','q','w','e','r'];
+  const wasOpen = document.getElementById('panel-' + key).classList.contains('open');
+
+  // Close all panels first
   keys.forEach(k => {
-    const card = document.getElementById('abl-' + k);
-    const panel = document.getElementById('panel-' + k);
-    if (k === key) {
-      const isOpen = panel.classList.contains('open');
-      if (isOpen) {
-        panel.classList.remove('open');
-        card.classList.remove('active');
-      } else {
-        panel.classList.add('open');
-        card.classList.add('active');
-        setTimeout(() => {
-          panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 50);
-      }
-    } else {
-      panel.classList.remove('open');
-      card.classList.remove('active');
-    }
+    document.getElementById('panel-' + k).classList.remove('open');
+    document.getElementById('abl-' + k).classList.remove('active');
   });
+
+  // If it wasn't already open, open it and scroll the ability row into view
+  if (!wasOpen) {
+    document.getElementById('panel-' + key).classList.add('open');
+    document.getElementById('abl-' + key).classList.add('active');
+
+    // Scroll so the ability card row stays pinned just below the sticky navs
+    const row = document.getElementById('ability-row');
+    const navHeight = (document.getElementById('topnav')?.offsetHeight || 0)
+                    + (document.querySelector('.page-subnav')?.offsetHeight || 0)
+                    + 12;
+    const rowTop = row.getBoundingClientRect().top + window.scrollY - navHeight;
+    setTimeout(() => {
+      window.scrollTo({ top: rowTop, behavior: 'smooth' });
+    }, 30);
+  }
 }
 
 // ── SUBNAV SCROLL ──
