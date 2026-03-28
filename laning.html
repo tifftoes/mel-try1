@@ -33,23 +33,22 @@
       margin-bottom: 0;
     }
 
-    /* Image left, text right */
+    /* Both layouts use identical column widths for consistent image size */
     .ward-row.img-left  { grid-template-columns: 260px 1fr; }
-    /* Text left, image right */
     .ward-row.text-left { grid-template-columns: 1fr 260px; }
 
-    /* Order helpers */
-    .ward-row.img-left  .ward-img  { order: 1; }
+    /* Order helpers — image always renders in its declared grid slot */
+    .ward-row.img-left  .ward-map  { order: 1; }
     .ward-row.img-left  .ward-text { order: 2; }
     .ward-row.text-left .ward-text { order: 1; }
-    .ward-row.text-left .ward-img  { order: 2; }
+    .ward-row.text-left .ward-map  { order: 2; }
 
     /* ── TEXT BLOCK ── */
     .ward-text h4 {
       font-family: 'Playfair Display', serif;
       font-size: 1.0rem;
       font-weight: 700;
-      color: var(--gold);
+      color: var(--navy);
       margin-bottom: 12px;
     }
 
@@ -73,74 +72,17 @@
       background: var(--navy);
     }
 
-    /* CSS map stand-in (used when no real screenshot is available) */
+    /* Map image */
     .ward-map {
       width: 100%;
       aspect-ratio: 4/3;
-      background: var(--navy-light);
+      object-fit: cover;
+      display: block;
       border: 1px solid var(--border-dark);
-      position: relative;
-      overflow: hidden;
       flex-shrink: 0;
     }
 
-    /* Atmospheric layer */
-    .ward-map::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 25% 65%, rgba(22,62,42,0.65) 0%, transparent 55%),
-        radial-gradient(ellipse at 72% 28%, rgba(15,45,70,0.55) 0%, transparent 52%),
-        radial-gradient(ellipse at 50% 80%, rgba(10,30,20,0.4) 0%, transparent 45%);
-    }
 
-    /* Subtle grid texture */
-    .ward-map::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        repeating-linear-gradient(0deg,   transparent, transparent 20px, rgba(255,255,255,0.016) 20px, rgba(255,255,255,0.016) 21px),
-        repeating-linear-gradient(90deg,  transparent, transparent 20px, rgba(255,255,255,0.016) 20px, rgba(255,255,255,0.016) 21px);
-    }
-
-    /* Terrain blobs */
-    .tb {
-      position: absolute;
-      border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
-      z-index: 1;
-    }
-    /* Philosophy map */
-    .tb-p1 { width:48%; height:40%; background:rgba(22,60,35,0.55); top:8%;  left:3%;  border-radius:35% 65% 60% 40% / 45% 55% 45% 55%; }
-    .tb-p2 { width:38%; height:32%; background:rgba(12,40,28,0.5);  bottom:12%; right:5%; border-radius:55% 45% 40% 60% / 50% 60% 40% 50%; }
-    .tb-p3 { width:28%; height:22%; background:rgba(18,35,50,0.4);  top:48%; left:38%; }
-    /* Stealth map */
-    .tb-s1 { width:50%; height:42%; background:rgba(18,55,32,0.55); top:5%;   right:10%; border-radius:55% 45% 50% 50% / 40% 60% 40% 60%; }
-    .tb-s2 { width:32%; height:28%; background:rgba(10,30,22,0.5);  bottom:15%; left:8%;  border-radius:45% 55% 55% 45% / 55% 45% 55% 45%; }
-    /* Standard map */
-    .tb-st1 { width:44%; height:38%; background:rgba(15,52,30,0.55); bottom:10%; right:6%; border-radius:60% 40% 50% 50% / 45% 55% 45% 55%; }
-    .tb-st2 { width:30%; height:26%; background:rgba(12,38,26,0.45); top:12%;   left:12%; }
-    /* Early ganker map */
-    .tb-e1 { width:46%; height:38%; background:rgba(20,55,35,0.55); top:5%;    left:5%;  border-radius:40% 60% 55% 45% / 55% 45% 55% 45%; }
-    .tb-e2 { width:34%; height:30%; background:rgba(10,32,24,0.5);  bottom:12%; right:8%; }
-
-    /* Red circle ward marker */
-    .ward-dot {
-      position: absolute;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 3px solid #cc2020;
-      box-shadow: 0 0 12px rgba(200,25,25,0.6), inset 0 0 10px rgba(200,25,25,0.18);
-      z-index: 3;
-    }
-
-    /* Unique positions per map */
-    .wd-philosophy { bottom: 35%; left: 26%; }
-    .wd-stealth    { top:    30%; right: 24%; }
-    .wd-standard   { bottom: 40%; left: 33%; }
-    .wd-early      { top:    26%; right: 26%; }
 
     /* ── SWEEP NOTE ── */
     .ward-sweep-note {
@@ -160,8 +102,8 @@
       .ward-row.text-left {
         grid-template-columns: 1fr;
       }
-      .ward-row.img-left  .ward-img,
-      .ward-row.text-left .ward-img  { order: 1; }
+      .ward-row.img-left  .ward-map,
+      .ward-row.text-left .ward-map  { order: 1; }
       .ward-row.img-left  .ward-text,
       .ward-row.text-left .ward-text { order: 2; }
     }
@@ -287,59 +229,39 @@
 
           <div class="ward-section">
 
-            <!-- ROW 1 · image left, text right -->
-            <div class="ward-row img-left">
-
-              <!-- Map visual: swap src to a real screenshot path when available, e.g. images/ward-philosophy.jpg -->
-              <div class="ward-map">
-                <div class="tb tb-p1"></div>
-                <div class="tb tb-p2"></div>
-                <div class="tb tb-p3"></div>
-                <div class="ward-dot wd-philosophy"></div>
-              </div>
-
+            <!-- ROW 1 · text left, image right -->
+            <div class="ward-row text-left">
               <div class="ward-text">
                 <h4>Ward Placement Philosophy</h4>
                 <p>Warding can be a very confusing concept for most people, and at the most advanced forms of play, can require a lot of coordination. Let's try to keep it simple. <strong>We always place a ward that we think can keep us alive if we see the enemy jungler.</strong></p>
               </div>
+              <img src="ward-placeholder.png" alt="Ward placement map" class="ward-map">
             </div>
 
-            <!-- ROW 2 · text left, image right -->
-            <div class="ward-row text-left">
+            <!-- ROW 2 · image left, text right -->
+            <div class="ward-row img-left">
+              <img src="ward-placeholder.png" alt="Stealth champion warding map" class="ward-map">
               <div class="ward-text">
                 <h4>Stealth Champion Warding</h4>
                 <p>For example, warding the river bushes against Shaco doesn't do anything. He is just going to use his Q over the wall. Instead, we want to ward his jungle camps (usually raptors). The same is true for champions like Evelynn and Twitch.</p>
               </div>
-              <div class="ward-map">
-                <div class="tb tb-s1"></div>
-                <div class="tb tb-s2"></div>
-                <div class="ward-dot wd-stealth"></div>
-              </div>
             </div>
 
-            <!-- ROW 3 · image left, text right -->
-            <div class="ward-row img-left">
-              <div class="ward-map">
-                <div class="tb tb-st1"></div>
-                <div class="tb tb-st2"></div>
-                <div class="ward-dot wd-standard"></div>
-              </div>
+            <!-- ROW 3 · text left, image right -->
+            <div class="ward-row text-left">
               <div class="ward-text">
                 <h4>Standard Jungler Warding</h4>
                 <p>Against more typical junglers, we want to ward the river bush that the enemy jungler is expected to come from. If we believe that the enemy is clearing from top to bot (80% of games this is true), then we can place a ward on the bottom river bush at 3:00. Why 3:00? Most junglers will fullclear or take 5 camps before ganking, this typically happens around the 3:00–3:30 mark.</p>
               </div>
+              <img src="ward-placeholder.png" alt="Standard jungler warding map" class="ward-map">
             </div>
 
-            <!-- ROW 4 · text left, image right -->
-            <div class="ward-row text-left">
+            <!-- ROW 4 · image left, text right -->
+            <div class="ward-row img-left">
+              <img src="ward-placeholder.png" alt="Early game ganker warding map" class="ward-map">
               <div class="ward-text">
                 <h4>Early Game Gankers</h4>
                 <p>Lastly, if we are against an enemy jungler that loves to level 3 gank (Ex. Rek'Sai, Elise) then we want to place an early ward on the side that the enemy jungler begins clearing on (place a ward in top river bush if they start topside).</p>
-              </div>
-              <div class="ward-map">
-                <div class="tb tb-e1"></div>
-                <div class="tb tb-e2"></div>
-                <div class="ward-dot wd-early"></div>
               </div>
             </div>
 
