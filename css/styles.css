@@ -502,8 +502,10 @@ body {
 .stat-pill .value { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:var(--brand); }
  
 /* ── ABOUT ── */
-.about-block { display:flex; gap:24px; align-items:flex-start; }
-.about-avatar { width:80px; height:80px; background:var(--brand); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:900; color:var(--white); flex-shrink:0; }
+.about-block { display:flex; gap:36px; align-items:flex-start; }
+.about-avatar { width:80px; height:80px; background:var(--brand); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:900; color:var(--white); flex-shrink:0; overflow:hidden; }
+.about-avatar img { width:100%; height:100%; object-fit:cover; display:block; }
+.about-text { position:relative; }
 .about-text h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--navy); margin-bottom:6px; }
 .about-text p { font-size:0.92rem; line-height:1.7; color:var(--text-body); }
  
