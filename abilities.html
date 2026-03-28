@@ -53,7 +53,7 @@
 
   <!-- Nav links -->
   <nav class="topnav-nav">
-    <a href="home.html" class="nav-item">Intro / Home</a>
+    <a href="index.html" class="nav-item">Intro / Home</a>
     <a href="abilities.html" class="nav-item">Abilities</a>
     <a href="laning.html" class="nav-item">Laning / Early Game</a>
     <a href="pregame.html" class="nav-item">Pregame</a>
@@ -278,25 +278,47 @@
 
         <div id="combos-sec" style="scroll-margin-top:130px">
           <div class="section-head"><h3>Combos</h3><div class="section-rule"></div></div>
-          <div class="section-sub">Core trading sequences — W is situational and not included; weave it in based on the matchup</div>
-          <div class="combo-card featured">
-            <div class="combo-label"><strong>Bread &amp; Butter — E into Q</strong></div>
-            <div class="combo-seq"><span class="seq-key">E</span><span class="seq-arrow">→</span><span class="seq-key">Q</span></div>
-            <p class="combo-note">Use E first for the slow/root to guarantee more Q missiles connect. This is the core trading pattern for Mel in virtually every lane.</p>
+          <div class="section-sub">Core in-fight sequences with dedicated media for each combo</div>
+
+          <div class="combo-grid">
+            <article class="combo-card">
+              <div class="combo-media">
+                <video src="https://www.byrdonline.com/evandabank/src/MelEQ.mp4" autoplay loop muted playsinline></video>
+                <span class="combo-media-label">Mel EQ combo video</span>
+              </div>
+              <div class="combo-content">
+                <h4>E + Q Combo</h4>
+                <div class="combo-flow"><span>E</span><span>→</span><span>Q</span></div>
+                <p>Use E first for the slow/root to guarantee more Q missiles connect. This is the core trading pattern for Mel in nearly every lane.</p>
+              </div>
+            </article>
+
+            <article class="combo-card">
+              <div class="combo-media">
+                <video src="https://www.byrdonline.com/evandabank/src/MelEFQ.mp4" autoplay loop muted playsinline></video>
+                <span class="combo-media-label">Mel EFQ combo video</span>
+              </div>
+              <div class="combo-content">
+                <h4>E + Flash Extension</h4>
+                <div class="combo-flow"><span>E</span><span>→</span><span>Flash</span><span>→</span><span>Q</span></div>
+                <p>Flash during E cast-time to reposition mid-animation, similar to Ahri E+Flash. Use to surprise enemies or extend E range.</p>
+              </div>
+            </article>
+
+            <article class="combo-card">
+              <div class="combo-media">
+                <video src="https://www.byrdonline.com/evandabank/src/MelEAQAU.mp4" autoplay loop muted playsinline></video>
+                <span class="combo-media-label">Mel EAQAU combo video</span>
+              </div>
+              <div class="combo-content">
+                <h4>Maximum DPS - Auto Weave</h4>
+                <div class="combo-flow"><span>E</span><span>→</span><span>Auto</span><span>→</span><span>Q</span><span>→</span><span>Auto</span><span>→</span><span>R</span></div>
+                <p>Weave autos between abilities for sustained damage. Great versus melee champions; use more caution against high-range mages.</p>
+              </div>
+            </article>
           </div>
-          <div class="combo-card" style="border-left:4px solid var(--navy)">
-            <div class="combo-label"><strong>E + Flash Extension Combo</strong></div>
-            <div class="combo-seq"><span class="seq-key">E</span><span class="seq-arrow">→</span><span class="seq-key">Flash</span><span class="seq-arrow">→</span><span class="seq-key">Q</span></div>
-            <p class="combo-note">Flash during the cast-time of E to reposition mid-animation — similar to Ahri E + Flash. Use to surprise the enemy or extend E's effective range.</p>
-          </div>
-          <div class="combo-card">
-            <div class="combo-label"><strong>Maximum DPS — Auto Weave Combo</strong></div>
-            <div class="combo-seq"><span class="seq-key">E</span><span class="seq-arrow">→</span><span class="seq-key">Auto</span><span class="seq-arrow">→</span><span class="seq-key">Q</span><span class="seq-arrow">→</span><span class="seq-key">Auto</span><span class="seq-arrow">→</span><span class="seq-key">R</span></div>
-            <p class="combo-note">Weave auto attacks between spells for maximum DPS. Most effective against melee champions who can't trade back at auto range. Against other mages, this brings you into their spell range — use with caution.</p>
-          </div>
-          <div class="info-box">
-            <strong>Note on W in combos:</strong> Mel does not have many rigid combos because W usage is entirely matchup-dependent. None of the above combos include W — but you should weave it in whenever you need to block or reflect the enemy's key ability. W is a reactive tool, not a fixed combo step.
-          </div>
+
+          <div class="info-box" style="margin-top:10px">Note: W is matchup-dependent and should be weaved for counters and burst mitigation. These are baseline sequences; adjust as needed.</div>
         </div>
       </div>
     </div>

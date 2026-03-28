@@ -302,7 +302,141 @@ body {
 .g2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; margin-bottom:16px; }
 .g3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-bottom:16px; }
 .g4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:12px; }
- 
+
+.combo-grid {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  margin-bottom:16px;
+  width:100%;
+  overflow:visible;
+}
+
+@media (min-width: 1440px) {
+  .combo-grid { grid-template-columns:1fr; }
+}
+
+
+.combo-card {
+  background:var(--white);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  display:flex;
+  gap:18px;
+  min-width:0;
+  overflow:hidden;
+  align-items:stretch;
+  padding:0;
+  min-height:420px;
+}
+
+.combo-card, .combo-media, .combo-content {
+  min-width:0;
+}
+
+
+.combo-media {
+  flex:0 0 45%;
+  min-height:320px;
+  max-height:420px;
+  background:var(--navy-light);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.combo-media img,
+.combo-media video {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.combo-media-label {
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  background:rgba(15,25,35,0.75);
+  color:#fff;
+  font-size:0.8rem;
+  letter-spacing:0.9px;
+  padding:4px 10px;
+  border-radius:3px;
+}
+
+.combo-content {
+  flex:1;
+  padding:20px 18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.combo-content h4 {
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;
+  margin-bottom:12px;
+  color:var(--navy);
+  letter-spacing:0.5px;
+}
+
+.combo-content p,
+.combo-content .combo-note {
+  font-family:'Source Serif 4',Georgia,serif;
+  font-size:1.05rem;
+  line-height:1.6;
+  color:var(--text-dark);
+}
+
+.combo-note {
+  margin-bottom:0;
+}
+
+.combo-flow span {
+  font-size:0.95rem;
+  padding:8px 12px;
+}
+
+@media (max-width: 980px) {
+  .combo-card {
+    flex-direction:column;
+  }
+
+  .combo-media {
+    flex:0 0 auto;
+    width:100%;
+    max-height:260px;
+  }
+
+  .combo-content h4 { font-size:1.25rem; }
+  .combo-content p, .combo-content .combo-note { font-size:1rem; }
+}
+
+.combo-flow {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:10px;
+}
+
+.combo-flow span {
+  background:var(--navy);
+  color:var(--white);
+  font-size:0.82rem;
+  font-weight:700;
+  padding:6px 10px;
+  border-radius:3px;
+}
+
+.combo-flow span:nth-child(2n) {
+  background:transparent;
+  color:var(--text-muted);
+  font-weight:400;
+  padding:0;
+}
+
 /* ── DROPDOWN ACCORDION ── */
 .accordion { margin-bottom:12px; }
  
